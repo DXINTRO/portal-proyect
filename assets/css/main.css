@@ -138,7 +138,7 @@ body {
 }
 .container {
 	width: 410px;
-!important;
+
 }
 }
 
@@ -159,7 +159,7 @@ body {
 }
 .container {
 	width: 410px;
-!important;
+
 }
 }
 
@@ -1392,7 +1392,7 @@ body, input, select, textarea {
 	float: left;
 	opacity: 0.89;
 	border-radius: 2px;
- padding-left: 22 %;
+ padding-left: 22%;
 	padding-top: 13px;
 }
 }
@@ -1401,7 +1401,7 @@ body, input, select, textarea {
 .imgfila {
 	opacity: 0.70;
 	width : 21%;
- padding-left: 22 %;
+ padding-left: 22%;
 	padding-top: 13px;
 }
 }
@@ -1620,7 +1620,7 @@ body.navPanel-visible #navPanel {
 .imgfila {
 	display: none;
 }
- input[type="password"],  input[type="email"], {
+ input[type="password"],  input[type="email"] {
 		/* height: 3em; */
 			width: 100%;
 }

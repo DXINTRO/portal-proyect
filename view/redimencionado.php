@@ -17,22 +17,7 @@
                     <ul>
                         <li><a href="index.html"><img width="20" height="20" src="images/home.png" /> Home</a></li>
                         <li> <a href="#" class="icon fa-angle-down">= Menu</a>
-                            <ul>
-                                <li><a href="tomadeturnos.html">Toma de Turnos</a></li>
-                                <li><a href="download.html">Descargar&nbsp Planilla</a></li>
-                                <li><a href="contact.html">Regalar T. 17:30/19:00</a></li>
-                                <li><a href="#">Cuenta.</a></li>
-                                <li><a href="#">Contact</a></li>
-
-                                <li> <a href="#">Gestionar</a>
-                                    <ul>
-                                        <li><a href="#">Administrar</a></li>
-                                        <li><a href="#">Suspender</a></li>
-                                        <li><a href="#">Bloqueados</a></li>
-                                        <li><a href="redimencionado.html">Redimencionar</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+<ul><?php include("..//controller/menulayout.php"); //incluimos el archivo menulayout.php ?></ul>
                         </li>
                         <li><a href="https://www.google.com/" class="button">Salir&nbsp (Logout)</a></li>
                     </ul>

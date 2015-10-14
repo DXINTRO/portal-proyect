@@ -1,0 +1,201 @@
+tr
+	{mso-height-source:auto;}
+col
+	{mso-width-source:auto;}
+br
+	{mso-data-placement:same-cell;}
+a {
+    text-decoration:none;
+    color:#000000;
+    font-size:9pt;
+}
+
+.style66
+	{color:#1F497D;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-style-name:"Encabezado 4";
+	mso-style-id:19;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:Normal;
+	mso-style-id:0;}
+.style77
+	{color:#7F7F7F;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:italic;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-style-name:"Texto explicativo";
+	mso-style-id:53;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+
+
+
+.xl74
+	{mso-style-parent:style0;
+	text-align:center;
+	border:.5pt solid windowtext;
+	background:#C5D9F1;
+	mso-pattern:#CCCCFF none;}
+.xl75
+	{mso-style-parent:style0;
+	border:.5pt solid windowtext;
+	background:white;
+	mso-pattern:black none;}
+
+ .xl83
+	{mso-style-parent:style77;
+	}
+ .xl84
+	{mso-style-parent:style0;
+	color:windowtext;}
+
+.xl85
+	{mso-style-parent:style66;
+	color:windowtext;
+	font-size:18.0pt;
+	font-weight:700;
+	text-align:left;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.5pt solid #4F81BD;
+	border-left:none;
+	background:white;
+	mso-pattern:black none;}
+
+.xl87
+	{mso-style-parent:style0;
+	font-size:10.0pt;}
+.xl88
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	mso-number-format:"Short Date";
+	border:.5pt solid windowtext;
+	background:#C5D9F1;
+	mso-pattern:black none;}
+.xl89
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	background:#C5D9F1;
+	mso-pattern:black none;}
+	
+.xl90
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	border:.5pt solid windowtext;}
+
+.xl95
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	text-align:center;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#C5D9F1;
+	mso-pattern:black none;}
+
+.xl99
+	{mso-style-parent:style0;
+	font-size:10.0pt;
+	font-weight:700;
+	text-align:center;
+	border:.5pt solid windowtext;
+	background:#C5D9F1;
+	mso-pattern:black none;}
+	
+	
+	
+	
+	
+.hvr-shutter-out-horizontal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+ 
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-shutter-out-horizontal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2098d1;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
+  color: white;
+}
+.hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+

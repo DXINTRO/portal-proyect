@@ -1620,10 +1620,7 @@ body.navPanel-visible #navPanel {
 .imgfila {
 	display: none;
 }
- input[type="password"],  input[type="email"] {
-		/* height: 3em; */
-			width: 100%;
-}
+
 input[type="text"] {
 	width : 110px;
 }

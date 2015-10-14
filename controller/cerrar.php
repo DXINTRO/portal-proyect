@@ -1,0 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['nombre'])){
+	header("location:pages/login.php?error=1");
+}
+session_unset();
+session_destroy();
+header("location:login.php");
+?>

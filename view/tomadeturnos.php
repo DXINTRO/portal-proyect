@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>toma de turnos</title>
+<title>Toma de turnos</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -16,29 +16,15 @@
   <!-- Header -->
   <header id="header">
     <input  type="text" name="piocha" id="piocha" value="c44" readonly />
-    <nav id="nav">
-      <ul>
-        <li><a href="index.html"><img width="20" height="20" src="images/home.png" /> Home</a></li>
-        <li> <a href="#" class="icon fa-angle-down">= Menu</a>
-          <ul>
-            <li><a href="tomadeturnos.html">Toma de Turnos</a></li>
-            <li><a href="download.html">Descargar&nbsp Planilla</a></li>
-            <li><a href="contact.html">Regalar T. 17:30/19:00</a></li>
-            <li><a href="#">Cuenta.</a></li>
-            <li><a href="#">Contact</a></li>
-            <li> <a href="#">Gestionar</a>
-              <ul>
-                <li><a href="#">Administrar</a></li>
-                <li><a href="#">Suspender</a></li>
-                <li><a href="#">Bloqueados</a></li>
-                <li><a href="redimencionado.html">Redimencionar</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="https://www.google.com/" class="button">Salir&nbsp (Logout)</a></li>
-      </ul>
-    </nav>
+	                <nav id="nav">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li> <a href="#" class="icon fa-angle-down"><i class="fa fa-bars"></i> Menu</a>
+                            <ul><?php include("..//controller/menulayout.php"); //incluimos el archivo menulayout.php ?></ul>
+                        </li>
+                        <li><a href="https://www.google.com/" class="button"><i class="fa fa-sign-out"></i> Salir&nbsp (Logout)</a></li>
+                    </ul>
+                </nav>
   </header>
   
   <!-- Main -->

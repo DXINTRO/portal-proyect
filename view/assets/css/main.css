@@ -198,9 +198,9 @@ body {
 }
 body, input, select, textarea {
 	color: #777;
-	font-family: "Source Sans Pro", sans-serif;
-	font-size: 16pt;
-	font-weight: 300;
+	font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+	font-size: 17pt;
+	/* font-weight: 300; */
 	letter-spacing: -0.015em;
 }
 a {
@@ -376,15 +376,16 @@ input[type="text"],  input[type="password"],  input[type="email"],  select,  tex
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
-	background: #f8f8f8;
 	border-radius: 6px;
 	border: solid 1px #e5e5e5;
 	color: black;
 	display: block;
 	outline: 0;
-	text-decoration: none;
 	font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
 	height: 42px;
+	
+
+	
 }
  input[type="text"]:invalid,  input[type="password"]:invalid,  input[type="email"]:invalid,  select:invalid,  textarea:invalid {
  box-shadow: none;

@@ -1,22 +1,22 @@
 /*create database sofnetcl_sisweb;
 
 create database queryjumbo;*/
-
+use  sofnetcl_sisweb;
 
 use queryjumbo;
 
-  select *
+ select   *
   from users   inner join userinformation on users.piochaid = users_piochaid   
   inner join  subcripccion  on userinformation.users_piochaid = subcripccion.users_piochaid;
   
-  
-  
-  call getUsuarioValido('dxintro@hotmail.com','123456',1) ;
+
+  call getUsuarioValido('dxintro@hotmail.com','e10adc3949ba59abbe56e057f20f883e',1);
   
   
     select id,piochaid,email,user_passwd,disabled,suspencion_idsuspencion,groups_groupid,displayname,displayapellidom,displayapellidop,substatus
     from users inner join userinformation on users.piochaid = users_piochaid   
   inner join  subcripccion  on userinformation.users_piochaid = subcripccion.users_piochaid;
+  
   
 
 

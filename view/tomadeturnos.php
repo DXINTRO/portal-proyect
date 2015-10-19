@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (!isset($_SESSION['piochaid'])) {
+    header("location:../index.php");
+}else  {
+if ($_SESSION['substatus'] == 0) {//si esta suspendido que lo envia aki
+    header("enviaraHTMLsubcripcion para que pague.php");
+}
+$header= $_SESSION['piochaid'] ;
+$name= $_SESSION['displayname'] ;
+$apellido= $_SESSION['displayapellidop'] ;}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -15,14 +27,14 @@
   
   <!-- Header -->
   <header id="header">
-    <input  type="text" name="piocha" id="piocha" value="c44" readonly />
+          <?php echo "<input id='piocha'  type='text'  value=' ". $header."' readonly />" ?>  
 	                <nav id="nav">
                     <ul>
                         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
                         <li> <a href="#" class="icon fa-angle-down"><i class="fa fa-bars"></i> Menu</a>
-                            <ul><?php include("..//controller/menulayout.php"); //incluimos el archivo menulayout.php ?></ul>
+                            <ul><?php include("..//model/menulayout.php"); //incluimos el archivo menulayout.php ?></ul>
                         </li>
-                        <li><a href="https://www.google.com/" class="button"><i class="fa fa-sign-out"></i> Salir&nbsp (Logout)</a></li>
+                        <li><a href="../controller/cerrar.php" class="button"><i class="fa fa-sign-out"></i> Salir&nbsp (Logout)</a></li>
                     </ul>
                 </nav>
   </header>
@@ -37,10 +49,12 @@
       <form >
         <div class="row-uniform">
           <div class="comun0">
-            <input type="text" name="name" id="name" value="" placeholder="Name" />
+              <?php echo "<input id='name'  type='text'  value=' ". $name."' readonly />" ?>
+            
           </div>
           <div class="comun1">
-            <input type="text" name="apellido" id="apellido" value="" placeholder="Apellido" />
+              <?php echo "<input id='apellido'  type='text'  value=' ". $apellido."' readonly />" ?>
+            
           </div>
         </div>
         <div class="row-uniform">
@@ -214,15 +228,15 @@
       </form>
       <div class="row uniform">
         <div class="12u">
-          <ul class="actions align-center">
+          <div class="actions align-center">
             <input type="submit" value="---Send---" />
             &nbsp;&nbsp;&nbsp;&nbsp;
             <input type="checkbox" id="toggle-trigger" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
-          </ul>
+          </div>
           </div>
           <br />
           <div class="12u">
-            <iframe width="100%" height="315" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0"  src="disponibilidad.html"></iframe>
+            <iframe width="100%" height="315" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0"  src="disponibilidad.php"></iframe>
           </div>
         
       </div>
@@ -230,36 +244,7 @@
   </section>
   
   <!-- Footer -->
-  <footer id="footer">
-    <ul class="icons">
-      <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-      <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-      <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-      <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-      <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-      <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-    </ul>
-    <div class="example">
-      <button class="btn btn-success" onclick="toggleOn()">On by API</button>
-      <button class="btn btn-danger" onclick="toggleOff()">Off by API</button>
-      <button class="btn btn-success" onclick="toggleOnByInput()">On by Input</button>
-      <button class="btn btn-danger" onclick="toggleOffByInput()">Off by Input</button>
-      <script>
-					function toggleOn() {
-						$('#toggle-trigger').bootstrapToggle('on')
-					}
-					function toggleOff() {
-						$('#toggle-trigger').bootstrapToggle('off')	
-					}
-					function toggleOnByInput() {
-						$('#toggle-trigger').prop('checked', true).change()
-					}
-					function toggleOffByInput() {
-						$('#toggle-trigger').prop('checked', false).change()
-					}
-				</script> 
-    </div>
-  </footer>
+<?php include_once ("..//model/footer.php");?>
 </div>
 
 <!--<script src="assets/js/jquery.min.js"></script>--> 

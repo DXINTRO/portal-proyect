@@ -198,10 +198,12 @@ body {
 }
 body, input, select, textarea {
 	color: #777;
-	font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
-	font-size: 17pt;
-	/* font-weight: 300; */
-	letter-spacing: -0.015em;
+	font-family: "Source Sans Pro",sans-serif;
+font-size: 16px;
+font-weight: 300;
+letter-spacing: -0.015em;
+
+	
 }
 a {
 	-moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
@@ -373,18 +375,19 @@ label {
 }
 input[type="text"],  input[type="password"],  input[type="email"],  select,  textarea {
 	-moz-appearance: none;
-	-webkit-appearance: none;
+	/* -webkit-appearance: none; */
 	-ms-appearance: none;
 	appearance: none;
 	border-radius: 6px;
 	border: solid 1px #e5e5e5;
 	color: black;
 	display: block;
+	padding-left:15px;
 	outline: 0;
-	font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+		font-family: "Source Sans Pro",sans-serif;
 	height: 42px;
 	
-
+font-size: 17px;
 	
 }
  input[type="text"]:invalid,  input[type="password"]:invalid,  input[type="email"]:invalid,  select:invalid,  textarea:invalid {
@@ -867,7 +870,7 @@ input[type="submit"],  input[type="reset"],  input[type="button"],  .button {
 	font-weight: 400;
 	height: 3em;
 	line-height: 3em;
-	padding: 0 2em;
+	padding: 0px 1.7em;
 	text-align: center;
 	text-decoration: none;
 	white-space: nowrap;
@@ -968,7 +971,7 @@ body.landing #page-wrapper {
 	cursor: default;
 	height: 3.25em;
 	left: 0;
-	line-height: 3.25em;
+	/* line-height: 3.25em; */
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -994,7 +997,7 @@ body.landing #page-wrapper {
 	line-height: inherit;
 	position: absolute;
 	right: 0.75em;
-	top: 0;
+	top: 1.5mm;
 	vertical-align: middle;
 }
 #header nav > ul {
@@ -1005,8 +1008,9 @@ body.landing #page-wrapper {
 #header nav > ul > li {
 	display: inline-block;
 	padding-left: 0;
-	font-size: 22px;
+	font-size: 17px;
 	text-shadow: 2px 0px 7px #000000;
+	
 }
 #header nav > ul > li > ul {
 	display: none;
@@ -1017,11 +1021,13 @@ body.landing #page-wrapper {
 	line-height: 1.95em;
 	padding: 0 1em;
 	border-radius: 6px;
+		
 }
 #header nav > ul > li a:not(.button) {
 	color: #fff;
 	display: inline-block;
 	text-decoration: none;
+	
 	border: 6px;
 }
 #header nav > ul > li a:not(.button).icon:before {
@@ -1096,7 +1102,7 @@ body.landing #page-wrapper {
 	list-style: none;
 	margin: calc(-0.5em + 1px) 0 0 1px;
 	padding: 0.5em 0;
-	width: 11em;
+	width: 13em;
 }
 .dropotron li {
 	padding: 0;
@@ -1110,8 +1116,10 @@ body.landing #page-wrapper {
 	border-top: solid 1px #f2f2f2;
 	color: inherit;
 	display: block;
-	padding: 0.15em 1em;
+	padding: 0.50em;
+
 }
+
 .dropotron li:first-child > a, .dropotron li:first-child > span {
 	border-top: 0;
 }
@@ -1120,11 +1128,15 @@ body.landing #page-wrapper {
 	color: #ffffff;
 }
 .dropotron.level-0 {
-	font-size: 1.5em;
+	font-size: 17px;
+	letter-spacing: -0.025em;
 	margin: 1em 0 0 0;
+	font-family: "Source Sans Pro",sans-serif;
 	text-shadow: 1px 0px 1% #000000;
+
 }
 .dropotron.level-0:before {
+			
 	-moz-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
@@ -1326,9 +1338,9 @@ body.landing #main {
 .c1tour, .c0days {
 	width: 10em;
 }
-body, input, select, textarea {
+/* body, input, select, textarea {
 	font-size: 11pt;
-}
+} */
 #more {
 	width: 65px;
 	height: 34px;

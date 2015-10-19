@@ -31,11 +31,11 @@ class fun_inicio {
             $_SESSION['displayapellidop'] = $rawdata[9];
             $_SESSION['substatus'] = $rawdata[10];
            
-             header("location:..//index.php");
+             header("location:../index.php");
             
             
         } else {
-            return "<font color='orange'><sub>La dirección de correo electrónico no pertenece a ninguna cuenta..</sub></font>";
+            return "<font color='orange'><sub>Has introducido un correo electrónico o una contraseña incorrecta..</sub></font>";
             
         }
       
@@ -55,60 +55,6 @@ class fun_inicio {
 //        $ad->desconectarBD();
 //    }
 
-//    function getDatosEmpresa($idusuario, $idempresa) {
-//        require_once("configuracion.php");
-//        $conf = new Configuracion();
-//        $datos = $conf->get_config();
-//
-//        require_once("fun_sistema.php");
-//        $ad = new fun_sistema();
-//        $conexion = $ad->conectarBD();
-//
-//        $consulta = "call ValidarCambioDeEmpresa(" . $idusuario . "," . $idempresa . ");";
-//        mysqli_set_charset($conexion, "utf8");
-//        $registro = mysqli_query($conexion, $consulta);
-//        if ($rs = mysqli_fetch_array($registro)) {
-//            $datos['id'] = $rs[0];
-//            $datos['nombre'] = $rs[1];
-//            $datos['logo'] = $datos['path_logo_emp'] . $rs[2];
-//        } else {
-//            $datos = null;
-//        }
-//        return $datos;
-//    }
-//
-//    function getempresas() {
-//        require_once("fun_sistema.php");
-//        $ad = new fun_sistema();
-//        $conexion = $ad->conectarBD();
-//        $consulta = "CALL getEmpListadoInicio(" . $_SESSION['empresa_def_id'] . "," . $_SESSION['idusuario'] . ");";
-//        mysqli_set_charset($conexion, "utf8");
-//        $registro = mysqli_query($conexion, $consulta);
-//        if ($registro) {
-//            echo "<ul class='dropdown-menu dropdown-menu-rigth'>";
-//            while ($row = mysqli_fetch_array($registro)) {
-//                $id = $row['idempresa'];
-//                $nom = $row['nombre'];
-//                echo "<li><a onclick=cargarEmpresa(" . $id . ")>" . $nom . "</a></li>";
-//            }
-//            echo "</ul>";
-//        }
-//    }
-//
-//    function getClieproveConEmpresa($empresa, $tipo) {
-//        require_once("fun_sistema.php");
-//        $ad = new fun_sistema();
-//        $conexion = $ad->conectarBD();
-//        echo $consulta = "select * from vistaclieprove where id in(select clieprove from emp_clieprove where empresa=$empresa) and (estado=1 and tipo=$tipo);";
-//        mysqli_set_charset($conexion, "utf8");
-//        $registro = mysqli_query($conexion, $consulta);
-//        $i = 0;
-//        $tabla = "";
-//        while ($row = mysqli_fetch_array($registro)) {
-//            echo "<option value='" . $row['id'] . "'>" . $row['nombre'] . " - " . $row['rut'] . "</option>";
-//        }
-//    }
-//
 //    function getTipoPago() {
 //        require_once("fun_sistema.php");
 //        $ad = new fun_sistema();

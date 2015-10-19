@@ -1,9 +1,9 @@
 <?php
 session_start();
-if(!isset($_SESSION['nombre'])){
-	header("location:pages/login.php?error=1");
-}
-session_unset();
+if(!isset($_SESSION['piochaid'])){
+	header("location:https://www.google.com/");
+}else{session_unset();
 session_destroy();
-header("location:login.php");
+header("location:../index.php");     }
+
 ?>

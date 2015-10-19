@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['piochaid'])) {
-    header("location:index.php");
+    header("location:../index.php");
 }
  $msg = "";
 ?>
@@ -18,7 +18,9 @@ if (isset($_POST['btnent'])) {
      $pas = md5($_POST['txtpas']);
     
      $msg = $fun->validarusuario($log,$pas);   
-    }else{$msg = "<font color='red'><sub>DEBE INICIAR SESION PARA ACCEDER.</sub></font>";}
+    }else{$msg = "<font color='red'><sub>DEBE INICIAR SESION PARA ACCEDER.</sub></font>";
+    
+    }
     
     
 }
@@ -89,26 +91,12 @@ if (isset($_POST['btnent'])) {
             <!-- CTA -->
             <section id="cta"></section>
 
-            <!-- Footer -->
-            <footer id="footer">
-                <ul class="icons">
-                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-                    <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-                    <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-                </ul>
-                <ul class="copyright">
-                    <li>&copy; <a href="">DXintro</a> All rights reserved'15</li>
-                    <li>Design: <a href="">HTML5 UP</a></li>
-                </ul>
-            </footer>
+             <!-- Footer -->
+<?php include_once ("..//model/footer.php");?>
         </div>
 
 
         <script src="assets/js/jquery.min.js"></script> 
-
         <script src="assets/js/jquery.scrollgress.min.js"></script> 
         <script src="assets/js/skel.min.js"></script> 
         <script src="assets/js/util.js"></script> 

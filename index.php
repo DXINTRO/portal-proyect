@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['piochaid'])){
-    header("location:view/index.php");
+    header("location:view/index");
 }else{
-    header("location:view/tomadeturnos.php");
+    header("location:view/tomadeturnos");
 }

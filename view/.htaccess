@@ -1,0 +1,5 @@
+Options -indexes
+ErrorDocument 404 http://localhost/portal-proyect/not_found.html
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

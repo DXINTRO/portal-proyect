@@ -1,5 +1,8 @@
 @import url("font-awesome.min.css");
+@import url('bootstrap.css');
 @import url('bootstrap.min.css');
+@import url('bootstrap-theme.css');
+@import url('bootstrap-theme.min.css');
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
 /* Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -57,8 +60,7 @@ body {
 .container {
     width: 413px;
 }
-.fa-search{
-}
+
 .btn-info{
     margin: 0px 30px 15px 0px !important;
 }

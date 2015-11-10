@@ -53,7 +53,7 @@ class Db {
    private function conectar(){
       $this->link=mysql_connect($this->servidor, $this->usuario, $this->password);
       mysql_select_db($this->base_datos,$this->link);
-      @mysql_query("SET NAMES 'utf8'");
+      mysql_query("SET NAMES 'utf8'");
        
       if (!$this->link) {
            

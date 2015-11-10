@@ -70,12 +70,18 @@ $(document).ready(function tablefull() {
     } 
     });
 });
-/* $("#Formulario").reset(); mandar a llamar 
-jQuery.fn.reset = function () {
-  $(this).each (function() { this.reset(); });
-} */
-  
- 
+$(document).ready(function(){
+   
+    var $cols = $('.th-ugh9');
+
+    $('td').mouseenter(function(){
+	var i =  ($(this).prevAll('td').length)/2; 
+	$($cols[i]).addClass('hover'); }).mouseleave(function(){
+	var i = ($(this).prevAll('td').length)/2;
+	$($cols[i]).removeClass('hover');});
+});
+
+
 (function(factory){
 	if(typeof define === 'function' && define.amd){
 		define(['jquery'], factory);

@@ -81,7 +81,9 @@ $header= $_SESSION['piochaid'] ;
 <?php include_once ("..//model/footer.php");?>
 </div>
   <!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
             <script src="assets/js/jquery.dropotron.min.js"></script>
             <script src="assets/js/jquery.scrollgress.min.js"></script>
             <script src="assets/js/skel.min.js"></script>

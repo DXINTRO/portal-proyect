@@ -17,9 +17,6 @@ $header= $_SESSION['piochaid'] ;
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" href="images/icon/smile_sad.png" />
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="assets/css/form.css" />
         <link rel="stylesheet" href="assets/css/mainbody.css" />
 
@@ -59,9 +56,9 @@ $header= $_SESSION['piochaid'] ;
   <label class="col-md-4 control-label" for="buscar">Buscar por $variable</label>
   <div class="col-md-5">
           <div class="input-group">
-      <input type="search" class="form-control" id="buscar" name="buscar" placeholder="Ingrese un dato">
+              <input type="search" class="form-control" id="buscar" name="buscar" onkeyup="" placeholder="Ingrese un dato">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button"><i class="fa fa-search"></i>&nbsp;Buscar</button>
+          <button class="btn btn-default" onclick="" type="button"><i class="fa fa-search"></i>&nbsp;Buscar</button>
       </span>
     </div>
     
@@ -138,9 +135,9 @@ $header= $_SESSION['piochaid'] ;
             <?php include_once ("..//model/footer.php"); ?>
         </div>
         <!-- Scripts -->
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.dropotron.min.js"></script>
         <script src="assets/js/jquery.scrollgress.min.js"></script>

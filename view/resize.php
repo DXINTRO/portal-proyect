@@ -15,14 +15,10 @@ $header= $_SESSION['piochaid'] ;
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/png" href="images/icon/table_gear.png" />
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-<!-- Optional theme -->
 <link rel="stylesheet" href="assets/css/main.css" />
-
 </head>
 <body>
 <div id="page-wrapper">
-
     <!-- Header -->
     <header id="header">
         <?php echo "<input id='piocha'  type='text'  value=' " . $header . "' readonly />" ?>  
@@ -36,18 +32,20 @@ $header= $_SESSION['piochaid'] ;
             </ul>
         </nav>
     </header>
-
     <!-- Main -->
     <section id="main" class="container 75%" >
         <header>
             <h2>Redimencionado </h2>
             <p>Redimenciona la planilla.</p><br/>
             <i class="fa fa-pencil-square-o"></i>
-
         </header>
-        <div class="box">
+       <section class="box" style="width: 117%">
+         <fieldset>       
+             <!-- Form Name -->
+<legend>Dimenciones actuales.</legend>
             <form method="post" id="Formredi" action="#" accept-charset="UTF-8">
-                <div class="row uniform 50%">
+                
+                <div class="table-responsive">
  <table id="tableresize" class="table table-bordered table-striped">
     <thead>
   <tr>
@@ -236,12 +234,10 @@ $header= $_SESSION['piochaid'] ;
     <td class="tg-031e"><input type="text" id="st6" maxlength="2" class="input-num" name=""></td>
   </tr>
 </table>
-
-
             </div><hr>
             <div class="row uniform 50%">
                 <div class="4u 12u(narrower)">
-                    <input id="priority-low" name="priority" value="0" checked="" type="radio">
+                    <input id="priority-low" name="priority" value="0" type="radio">
                     <label for="priority-low"><i class="fa fa-angle-right"></i>Bajo</label>
                 </div>
                 <div class="4u 12u(narrower)">
@@ -258,32 +254,28 @@ $header= $_SESSION['piochaid'] ;
                 </div>
             </div>
             <div class="row uniform">
-                <div class="12u">
+                
                     <ul class="actions align-center">
                         <li><input type="submit" value="- - Aplicar - -" /></li>
-                      
                     </ul>
+                <hr>
                     <ul class="actions align-center">
                         <li style="text-align:left"><strong>Describa la planilla </br>o agregue un enunciado.</strong></br> <div style="float:right;margin:1em 0 0 0; "><a  href="#" class="button special small">Guardar</a></div></li>
                         <li> <textarea name="message" id="comentario" placeholder="Enter &nbsp your &nbsp message" maxlength="240" ></textarea></li>
                     </ul>
-                </div>
+               
             </div>
         </form>
-                </div>
-            </section>
-
-            
+        </fieldset>
+       </section> </section>
              <!-- Footer -->
 <?php include_once ("..//model/footer.php");?>
 </div>
   <!-- Scripts -->
-            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
-			<!-- Include all compiled plugins (below), or include individual files as needed -->
-            
-            
-            <script src="assets/js/jquery.dropotron.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="assets/js/jquery.dropotron.min.js"></script>
             <script src="assets/js/jquery.scrollgress.min.js"></script>
             <script src="assets/js/skel.min.js"></script>
             <script src="assets/js/util.js"></script>
@@ -291,5 +283,4 @@ $header= $_SESSION['piochaid'] ;
 	    <script type="text/javascript" >$(".input-num").numeric({ decimal: false, negative: false }, function() { this.value = ""; this.focus(); });</script>
             <script src="assets/js/main.js"></script>
     </body>
-
 </html>	

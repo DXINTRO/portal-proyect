@@ -1,5 +1,8 @@
 @import url("font-awesome.min.css");
+@import url('bootstrap.css');
 @import url('bootstrap.min.css');
+@import url('bootstrap-theme.css');
+@import url('bootstrap-theme.min.css');
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
 /* Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -74,8 +77,6 @@ body {
     text-indent: -2px;
     font-size: 14px;
 }
-.select-wrapper left{    margin-left: 33px}
-.select-wrapper right{    margin-right: 33px}
 
   legend {
       text-transform: capitalize;
@@ -91,12 +92,17 @@ body {
     } 
 
 .category{width:100%}
+#loading{display: none;}
+#detalles{display: none;}
+#one,#two,#three,#four,#five{display:none  }
 
  input[type="password"],  input[type="email"] {
        
         font-weight: 400;
     }
+    
 @media screen and (max-width: 1280px) {
+
     .container.\31 25\25 {
         width: 100%;
         max-width: 75em;
@@ -201,7 +207,7 @@ body, input, select, textarea {
     font-size: 14px;
     font-weight: 300;
     /* letter-spacing: -0.015em; */
-    background-color: #FAFAFA;
+    background-color: #F3F4F6;
 }
 a {
     -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
@@ -385,7 +391,7 @@ input[type="text"],  input[type="password"],  input[type="email"],  select,  tex
      -moz-appearance: none;
     ms-appearance: none;
     border-radius: 6px;
-    border: solid 1px #e5e5e5;
+    border: solid 1px #C7C7C7;
     color: black;
     display: block;
     padding-left: 15px;
@@ -405,8 +411,21 @@ input[type="text"]:focus,  input[type="password"]:focus,  input[type="email"]:fo
         box-shadow: 0 0 0 2px #e89980;*/
     border-color: #66afe9;
     outline: 0;
-   
-    box-shadow:         inset 0px 0px 11px -2px rgba(0,0,0,0.30),0px 0px 10px 2px rgba(102, 175, 233, 0.77);
+    box-shadow:inset 0px 0px 11px -2px rgba(0,0,0,0.30),0px 0px 10px 2px rgba(102, 175, 233, 0.77);
+}
+.error {
+    /*    border-color: #e89980;
+        box-shadow: 0 0 0 2px #e89980;*/
+    border-color: red;
+    outline: 0;
+    box-shadow:inset 0px 0px 11px -2px rgba(0,0,0,0.30),0px 0px 10px 2px rgba(234, 000, 000, 0.66);
+}
+.succes {
+    /*    border-color: #e89980;
+        box-shadow: 0 0 0 2px #e89980;*/
+    border-color:gray;
+    outline: 0;
+    box-shadow: 2px 2px 2px 0px rgba(119,152,163,1);
 }
 .select-wrapper {
     text-decoration: none;
@@ -773,7 +792,7 @@ ul.actions.fit {
     display: table;
     /* cambie el margin a 0.9 por 0*/
     padding: 0;
-     margin: 0 0 0.9em -1em !important;
+     margin: 0 0 0.9em -0.6em !important;
     table-layout: fixed;
     width: calc(100% + 1em);
 }
@@ -827,59 +846,7 @@ dl {
     border-color: #FFFFFF #FFFFFF #FFFFFF #FFFFFF;
     box-shadow: 2px 2px 5px;
 }
-/* 
-.table-wrapper {
-        -webkit-overflow-scrolling: touch;
-        overflow-x: auto;
-}
-table {
-        margin: 0 0 2em 0;
-        width: 100%;
-}
-table tbody tr {
-        border: solid 1px #e5e5e5;
-        border-left: 0;
-        border-right: 0;
-}
-table tbody tr:nth-child(2n + 1) {
-        background-color: #f8f8f8;
-}
-table td {
-        padding: 0.75em 0.75em;
-}
-table th {
-        color: #646464;
-        font-size: 0.9em;
-        font-weight: 300;
-        padding: 0 0.75em 0.75em 0.75em;
-        text-align: left;
-}
-table thead {
-        border-bottom: solid 2px #e5e5e5;
-}
-table tfoot {
-        border-top: solid 2px #e5e5e5;
-}
-table.alt {
-        border-collapse: separate;
-}
-table.alt tbody tr td {
-        border: solid 1px #e5e5e5;
-        border-left-width: 0;
-        border-top-width: 0;
-}
-table.alt tbody tr td:first-child {
-        border-left-width: 1px;
-}
-table.alt tbody tr:first-child td {
-        border-top-width: 1px;
-}
-table.alt thead {
-        border-bottom: 0;
-}
-table.alt tfoot {
-        border-top: 0;
-} */
+
 /* Button */
 input[type="submit"],  input[type="reset"],  input[type="button"],  .button {
     -moz-appearance: none;

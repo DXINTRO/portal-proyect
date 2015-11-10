@@ -4,8 +4,6 @@ if (isset($_SESSION['piochaid'])) {
 header("location:../index.php");
 }
 $msg = "";
-?>
-<?php
 require_once("..//controller/fun_inicio.php");
 
 $fun = new fun_inicio();

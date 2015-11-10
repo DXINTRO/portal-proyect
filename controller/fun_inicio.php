@@ -5,8 +5,8 @@ class fun_inicio {
 
     function validarusuario($log, $pas) {
           
-        require 'Db.class.php';
-       require 'Conf.class.php';
+        require_once '../model/Db.class.php';
+       require_once '/contruct/Conf.class.php';
        /*Creamos la instancia del objeto. Ya estamos conectados*/
          $bd=Db::getInstance();
        
@@ -24,13 +24,18 @@ class fun_inicio {
             $_SESSION['email'] = $rawdata[2];   //
             $_SESSION['user_passwd'] = $rawdata[3];
             $_SESSION['disabled'] = $rawdata[4];
-            $_SESSION['suspencion_idsuspencion'] = $rawdata[5];
-            $_SESSION['groups_groupid'] = $rawdata[6];
-            $_SESSION['displayname'] = $rawdata[7];
-            $_SESSION['displayapellidom'] = $rawdata[8];
-            $_SESSION['displayapellidop'] = $rawdata[9];
-            $_SESSION['substatus'] = $rawdata[10];
-           
+            $_SESSION['displayname'] = $rawdata[5];
+            $_SESSION['displayapellidom'] = $rawdata[6];
+            $_SESSION['displayapellidop'] = $rawdata[7];
+            $_SESSION['substatus'] = $rawdata[8];
+            $_SESSION['admin'] = $rawdata[9];
+            $_SESSION['tipouser'] = $rawdata[10];
+            $_SESSION['tiempoDesde'] = $rawdata[11];
+            $_SESSION['tiempoAsta'] = $rawdata[12];
+            $_SESSION['regaladode'] = $rawdata[13];
+            $_SESSION['released'] = $rawdata[14];
+           $_SESSION['desde'] = $rawdata[15];
+           $_SESSION['asta'] = $rawdata[16];
              header("location:../index.php");
             
             

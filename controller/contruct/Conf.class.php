@@ -24,7 +24,7 @@ class Conf {
    
    private function __construct(){
      
-      require_once('config.class.php');
+      require_once('../controller/config.class.php');
       $conx= new Config;
       $config = $conx->get_config();
        

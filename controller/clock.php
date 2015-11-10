@@ -1,40 +1,11 @@
-<?php //
- header("Pragma: no-cache");
-/*************************** Config. *****************************/
-$Today = time();
-date_default_timezone_set('America/Santiago');
-/*************************** Config. *****************************/
-function getServerDateItems($inDate) {
-	return date('Y,n,j,G,',$inDate).intval(date('i',$inDate)).','.intval(date('s',$inDate));
-	// year (4-digit),month,day,hours (0-23),minutes,seconds for scripts
-	// use intval to strip leading zero from minutes and seconds
-	//   so JavaScript won't try to interpret them in octal
-	//   (use intval instead of ltrim, which translates '00' to '')
-}
-function clockDateString($inDate) {
-    return date('l, F j, Y',$inDate);    // eg Tuesday, October 27, 2015 
-}
-function clockTimeString($inDate, $showSeconds=true) {//etseeeeee
-    return date($showSeconds ? 'G:i:s' : 'G:i',$inDate).'';
-}
-function Months($N){// echo(Months(4)); retorna en 4 meses mas la fecha 2016-02-28 
-return date("Y-n-d",strtotime('+'.$N.' Months')) ."\n";
-}
-function Week($N){// requiere un numero y retorna  iwual que month
-return date("Y-m-d",strtotime('+'.$N.' Week')) ."\n";
-}
-function microtime_int()// retorna 30678700. nanoseconds 
-{
-	  list($usec, $sec) = explode(".", microtime());
-	  usleep(1);
-      return ((int)$sec );
-}
-echo 'Loading..';
+<?php
+require_once 'clockConfig.php';
 ?>
 
 <script language="JavaScript" type="text/javascript">
 /* set up variables used to init clock in BODY's onLoad handler;
    should be done as early as possible */
+     
 var clockLocalStartTime = new Date();
 var clockServerStartTime = new Date(<?php echo(getServerDateItems($Today))?>);
 var clockIncrementMillis ;
@@ -84,11 +55,23 @@ function clockInit(localDateObject, serverDateObject)
 }
 function clockOnLoad()
 {
-	clockIncrementMillis = 101;
+     $('#toggle-demo').bootstrapToggle('off');
+        $('#toggle-demo').change(function() {
+        var toggle = $(this).prop('checked');
+        if (toggle !== true) {
+          $("#primary").attr('disabled', 'disabled');
+           $("#primary").addClass('succes');
+        }else{$("#primary").removeAttr('disabled');}
+    });
+    
+    clockIncrementMillis = 101;
     clockUpdate();
 }
 function clockTimeString(inHours, inMinutes, inSeconds,inMilesimas) {
- return inHours === null ? "-:--" : ("<font size='10' face='Arial' ><b><font size='3'>Hora actual:</font></br>" +inHours + (inMinutes < 10 ? ":0" : ":") + inMinutes + (inSeconds < 10 ? ":0" : ":") + inSeconds+"<font size='4'>" +(inMilesimas < 100 ? " 0" : " ") + inMilesimas + "</font>"+ (inHours < 12 ? "AM" : "  PM")+"</b></font>");
+//       if ((inHours===20 && inMinutes>=30) || (inHours===21 && inMinutes<=30) ) {
+//      setTimeout($('#toggle-demo').removeAttr('disabled', 'disabled'),500);
+//      }else{$('#toggle-demo').bootstrapToggle('off');$('#toggle-demo').attr('disabled', 'disabled'); }
+     return inHours === null ? "-:--" : ("<font size='10' face='Arial' ><b><font size='3'>Hora actual:</font></br>" +inHours + (inMinutes < 10 ? ":0" : ":") + inMinutes + (inSeconds < 10 ? ":0" : ":") + inSeconds+"<font size='4'>" +(inMilesimas < 100 ? " 0" : " ") + inMilesimas + "</font>"+ (inHours < 12 ? "AM" : "  PM")+"</b></font>");
    }
 function clockDisplayTime(inHours, inMinutes, inSeconds,inMilesimas) {//show the clock
     	 if (document.layers){

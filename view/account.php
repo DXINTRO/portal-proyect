@@ -17,9 +17,6 @@ if (!isset($_SESSION['piochaid'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" href="images/icon/settings.png" />
         <link rel="stylesheet" href="assets/css/datepicker.css" />
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="assets/css/form.css" />
         <link rel="stylesheet" href="assets/css/mainbody.css" />
     </head>
@@ -43,9 +40,7 @@ if (!isset($_SESSION['piochaid'])) {
             <!-- Main -->
             <!-- Main -->
             <section id="main" class="container 75%">
-                <header>
-                    <div class="12u">
-                        <!-- Lists -->
+                       <!-- Lists -->
                         <section class="box">
                             <div class="panel panel-success">
                                 <form class="form-horizontal">
@@ -260,15 +255,15 @@ if (!isset($_SESSION['piochaid'])) {
                                 </form>
                             </div>
                         </section>
-                    </div>
+            
             </section>
             <!-- Footer -->
             <?php include_once ("..//model/footer.php"); ?>
         </div>
         <!-- Scripts -->
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
+       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="assets/js/bootstrap.min.js"></script>
          <script src="assets/js/bootstrap-datepicker.js"></script>
         <script src="assets/js/jquery.dropotron.min.js"></script>
@@ -279,5 +274,6 @@ if (!isset($_SESSION['piochaid'])) {
             $(document).ready(function () { $('#datetime').datepicker({startView: 2});});
         </script>
         <script src="assets/js/main.js"></script>
+          <script src="assets/js/pace.min.js"></script>   <!--barra carga-->
     </body>
 </html>	

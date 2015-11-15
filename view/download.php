@@ -41,7 +41,7 @@ $header= $_SESSION['piochaid'] ;
                     <h2>Zona de Descargas</h2>
                     <p><img style="width:333px" src="images/nube.png"></p>
                 </header>
-				<div class="12u">
+		<div class="12u">
 				<!-- Lists -->
 				<section class="box">
 				      <div class="row uniform">
@@ -58,20 +58,30 @@ $header= $_SESSION['piochaid'] ;
             <iframe width="100%" height="850" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0"  src="planilla/PLANILLA.html"></iframe>
           </div>
       </div>
-           </section></div>
+          </div> 
+             <div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//portalup.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script></section>
              <!-- Footer -->
 <?php include_once ("..//model/footer.php");?>
-</div>
-  <!-- Scripts -->
+    </div>
+    <!-- Scripts -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-	    <script src="assets/js/bootstrap.min.js"></script>
-            <script src="assets/js/jquery.dropotron.min.js"></script>
-            <script src="assets/js/jquery.scrollgress.min.js"></script>
-            <script src="assets/js/skel.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-            <script src="assets/js/main.js"></script>
-    </body>
-</html>	
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrollgress.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

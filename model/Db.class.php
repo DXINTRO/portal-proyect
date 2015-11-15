@@ -104,8 +104,13 @@ class Db {
 
 
    //Devuelve el último id del insert introducido
-   public function lastID(){
-      return mysql_insert_id($this->link);
+   public function lastID($idtabla,$tabla){
+       $rs = mysql_query("SELECT MAX(" .$idtabla. ") AS id FROM " .$tabla);
+      if (!$this->result = mysql_fetch_row($rs)) {
+     die('No pudo hacer la consulta: ' . mysql_error());
+        }
+      $id = trim($this->result[0]);
+          return $id;
    }
    
 }

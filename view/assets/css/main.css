@@ -15,6 +15,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
+     
 }
 body {
     line-height: 1;
@@ -49,6 +50,7 @@ body {
 .container {
     margin-left: auto;
     margin-right: auto;
+  
 }
 .container.\31 25\25 {
     width: 100%;
@@ -92,7 +94,7 @@ body {
     } 
 
 .category{width:100%}
-#loading{display: none;}
+.loading{display: none;}
 #detalles{display: none;}
 #one,#two,#three,#four,#five{display:none  }
 
@@ -214,7 +216,7 @@ a {
     -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
     -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
     transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-    border-bottom: dotted 1px;
+/*    border-bottom: dotted 1px;*/
     color: #e89980;
     text-decoration: none;
 }
@@ -229,7 +231,7 @@ em, i {
     font-style: italic;
 }
 p {
-    margin: 0 0 2em 0;
+    margin: 0 0 1em 0;/// cambie aki de 2em a 1
 }
 h1, h2, h3, h4, h5, h6 {
     color: #646464;
@@ -457,6 +459,9 @@ input[type="text"]:focus,  input[type="password"]:focus,  input[type="email"]:fo
     display: none;
 }
 textarea {
+     font-weight: 500;
+    line-height: 18px;
+    font-family: arial,sans-serif; 
     padding-top: 7px;
     padding-right: 15px;
     padding-bottom: 7px;
@@ -554,12 +559,14 @@ input[type="radio"] + label:before {
 .box {
     background: #fff;
     border-radius: 6px;
-    box-shadow: 0 2px 0 0 #e5e5e5;
+    box-shadow: 0 0 5px  #d8d8d8;
+   
     margin: 0 0 2em 0;
     padding: 3em;
 }
 .box > :last-child {
     margin-bottom: 0;
+    
 }
 .box.alt {
     background: none !important;
@@ -1249,6 +1256,30 @@ body.landing #main {
     margin-left: 0;
     padding-left: 0;
 }
+#footer1 a {
+    color: #BABABA;
+    display: inline-block;
+    font-family: "ff-din-round-web-pro",sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 10px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    
+} 
+
+#footerMain {
+    clear: both;
+    text-align: right;
+    border-top: 1px solid #CFCFCF;
+    padding-top: 10px;
+   
+      
+}
+#footer1 li {
+    display: inline;
+}
+
 /* CTA */
 #cta {
     background: #e89980;
@@ -1338,6 +1369,7 @@ body.landing #main {
 /* Narrow */
 @media screen and (max-width: 980px) {
     /* Basic */
+     #boxsabe{padding-top: 1em; text-align: left}
     .input {
         width: 80%;
         margin-left: 44px;

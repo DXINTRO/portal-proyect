@@ -189,7 +189,7 @@ include_once ("../controller/clock.php");
                         <div class="row-uniform" ><a href="javascript:void(0);" onclick="button_more();"><img id="more" SRC="images/more.png" onmouseover="this.src = 'images/more1.png';" onmouseout="this.src = 'images/more.png';" ALT="Agregar fila" ></a></div> 
 
                          <div class="row uniform">
-                             <div class="actions align-center" ><img id="loading" draggable="false" SRC="images/loading.gif"  ALT="ok" ><div id="detalles"><a  class="button special small" onClick="verDetalle()" ><i class="fa fa-info-circle"></i>&nbsp;&nbsp;Información de Envío</a></div> </div>
+                             <div class="actions align-center" ><img class="loading" width="122" height="66" draggable="false" SRC="images/loading.gif"  ALT="ok" ><div id="detalles"><a  class="button special small" onClick="verDetalle()" ><i class="fa fa-info-circle"></i>&nbsp;&nbsp;Información de Envío</a></div> </div>
                              <div  class="actions align-center">
                                  <div id="boxbuttons"> 
                                      

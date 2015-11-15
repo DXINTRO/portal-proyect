@@ -36,7 +36,7 @@ INNER JOIN  suspencion ON users.piochaid = suspencion.users_piochaid;
   
   call getTurnos('c60');
   
-  
+ 
   
   
   
@@ -98,28 +98,25 @@ INSERT INTO `queryjumbo`.`timessent` (`timeatual`, `timeactual2`, `tiempoDesde`,
 --------------------------------------------------------------------------------------------------------
 /*agregar turnos a la bd*/
 /*primero se crea la planilla donde 1 es activa*/
-INSERT INTO `queryjumbo`.`planilla` (`fechainicio`, `fechafinal`, `comntario`, `stado`) VALUES ('2015-11-08', '2015-11-15', 'planilla culia', '1');
+INSERT INTO `queryjumbo`.`planilla` (`idplanilla`,`fechainicio`, `fechafinal`, `comntario`, `stado`) VALUES ('300','2015-12-31', '2015-12-31', '', '1');
 /*despues se le establese su dimencionado*/
-INSERT INTO `queryjumbo`.`redimencionado` (`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('5', '6', '4', '3', '4', '5', '6', '3', '7');
-INSERT INTO `queryjumbo`.`redimencionado` (`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('4', '5', '3', '3', '2', '3', '4', '6', '8');
-INSERT INTO `queryjumbo`.`redimencionado` (`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('6', '5', '7', '8', '9', '7', '4', '7', '4');
-INSERT INTO `queryjumbo`.`redimencionado` (`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('5', '11', '10', '6', '4', '2', '7', '8', '11');
-INSERT INTO `queryjumbo`.`redimencionado` (`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('8', '7', '6', '4', '7', '8', '9', '3', '8');
-INSERT INTO `queryjumbo`.`redimencionado` (`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('6', '5', '4', '7', '8', '9', '7', '5', '4');
-INSERT INTO `queryjumbo`.`redimencionado` (`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('6', '5', '7', '4', '6', '7', '8', '5', '6');
+
+
+select count(idplanilla) as total from  planilla;
 
 SELECT * FROM queryjumbo.planilla;
-SELECT * FROM queryjumbo.redimencionado;
+SELECT * FROM queryjumbo.dia;
+
 
 /* insertamos del diaas  de la planillas*/
-INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `redimencionado_redimencionadoid`, `dianame`) VALUES ('300', '100', 'Lunes');
-INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `redimencionado_redimencionadoid`, `dianame`) VALUES ('300', '101', 'Martes');
-INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `redimencionado_redimencionadoid`, `dianame`) VALUES ('300', '102', 'Miercoles');
-INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `redimencionado_redimencionadoid`, `dianame`) VALUES ('300', '103', 'Jueves');
-INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `redimencionado_redimencionadoid`, `dianame`) VALUES ('300', '104', 'Viernes');
-INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `redimencionado_redimencionadoid`, `dianame`) VALUES ('300', '105', 'Sabado');
-INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `redimencionado_redimencionadoid`, `dianame`) VALUES ('300', '106', 'Domingo');
 
+INSERT INTO `queryjumbo`.`dia` (`iddias`,`planilla_idplanilla`, `dianame`,`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('400','300', 'Lunes','5', null, '4', '3', null, '5', '6', '3', '7');
+INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `dianame`,`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('300', 'Martes','4', null, '3', '3', null, '3', '4', '6', '8');
+INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `dianame`,`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('300', 'Miercoles','6', null, '7', '8', null, '7', '4', '7', '4');
+INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `dianame`,`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('300', 'Jueves','5', null, '10', '6', null, '2', '7', '8', '11');
+INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `dianame`,`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('300', 'Viernes','8', null, '6', '4', null, '8', '9', '3', '8');
+INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `dianame`,`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('300', 'Sabado','6', null, '4', '7', null, '9', '7', '5', '4');
+INSERT INTO `queryjumbo`.`dia` (`planilla_idplanilla`, `dianame`,`8:00`, `9:00`, `10:30`, `12:00`, `12:30`, `14:00`, `15:30`, `17:30`, `19:00`) VALUES ('300', 'Domingo',null, '5', '4', null, '7', '7', '8', '5', '6');
 
 
 /*ahora cada usuario insertara lo siguiente */
@@ -139,13 +136,14 @@ INSERT INTO `queryjumbo`.`turno` (`hora`, `dia_iddias`) VALUES (1030, '402');/*v
 SET FOREIGN_KEY_CHECKS = 0; 
 TRUNCATE turno; 
 SET FOREIGN_KEY_CHECKS = 1;
+
 SET FOREIGN_KEY_CHECKS = 0; 
 TRUNCATE empaques; 
 SET FOREIGN_KEY_CHECKS = 1;
 
 
 
-
+select count(idemp) as total from  empaques
 
 setTurnos
 SELECT indez,users_piochaid,dianame,hora,tiempoDeEnvio
@@ -158,5 +156,40 @@ GROUP BY dia.dianame;
 
 
 select * from dia,empaques,turno where empaques.idemp= turno.idturno and dia.iddias=turno.dia_iddias and empaques.users_piochaid = 'c60';
+
+
+/*
+//más ejemplos
+DELIMITER $$
+DROP PROCEDURE IF EXIST `agenda`.`tipoUsuarios`$$
+CREATE PROCEDURE `agenda`.`tipoUsuarios`(in no_cta integer)
+BEGIN
+DECLARE tipoUsuario char(15);
+ 
+ IF no_cta=17 THEN
+   SET tipoUsuario='Admin';
+ ELSE
+    SET tipoUsuario='Invitado';
+ END IF;
+ 
+INSERT INTO usuarios(tipoUsuario);
+END $$
+DELIMITER ;
+ 
+//Invocar
+CALL tipoUsuarios(12);//resultado='Invitado'
+CALL tipoUsuarios(17);//resultado='Admin'
+
+*/
+
+
+
+
+
+
+
+
+
+
 
 

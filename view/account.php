@@ -72,25 +72,29 @@ if (!isset($_SESSION['piochaid'])) {
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="passwordinput">Contraseña actual</label>
                                             <div class="col-md-4">
-                                                <input id="passwordinput" name="passwordinput" placeholder="" class="form-control input-md" type="password">
+                                                <input id="password" name="password" placeholder="" class="form-control input-md" type="password">
+                                                
                                             </div>
                                         </div>
                                         <!-- Password input-->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="passwordinput">Contraseña nueva</label>
                                             <div class="col-md-4">
-                                                <input id="passwordinput" name="passwordinput" placeholder="" class="form-control input-md" type="password">
+                                                <input id="newpassword" name="newpassword" placeholder="" onkeyup="msjpass(this)" class="form-control input-md" type="password">
+                                               <span class="msj">Minimo 8 caracteres de longitud</span>
                                             </div>
                                         </div>
                                         <!-- Password input-->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="passwordinput">Confirmar contraseña nueva</label>
                                             <div class="col-md-4">
-                                                <input id="passwordinput2" name="passwordinput" placeholder="" class="form-control input-md" type="password">
-                                                <button id="save" class="btn btn-info col-md-4">Aceptar</button><button id="cancel" class="btn btn-danger col-md-4">Cancelar</button>
+                                                <input id="confirm_password" name="confirm_password" placeholder="" onkeyup="msjpass(this)" class="form-control input-md" type="password">
+                                                <span class="msj" >Por favor confirme su password</span><br>
+                                                 <button id="save" disabled="disabled" class="btn btn-info col-md-4">Aceptar</button><button id="cancel" class="btn btn-danger col-md-4">Cancelar</button>
                                             </div>
                                         </div>
                                         </div>
+                                        
                                     </fieldset>
                                 </form></div>
                             <hr>				
@@ -274,6 +278,7 @@ if (!isset($_SESSION['piochaid'])) {
             $(document).ready(function () { $('#datetime').datepicker({startView: 2});});
         </script>
         <script src="assets/js/main.js"></script>
+         <script src="assets/js/ajax.js"></script>
           <script src="assets/js/pace.min.js"></script>   <!--barra carga-->
     </body>
 </html>	

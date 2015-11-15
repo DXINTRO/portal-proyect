@@ -12,5 +12,15 @@
         <li>&copy; Dxintro. All rights reserved.</li>
         <li>About: <a href="#" id="tooltip" data-toggle="tooltip"  title="versión 1.5">PORTAL UP</a></li>
     </ul>
-    
+   
 </footer>
+ <div id="footerMain">
+               <ul id="footer1">
+                   <li class=" first"><a href="#">Sobre Portal UP</a></li>
+                   <li><a href="contact">Contacto</a></li>
+                   <li><a href="mailto: ign_latam@ign.com">Anúnciate</a></li>
+                   <li><a href="#">Prensa</a></li>
+                   <li><a href="#" target="blank">Legales</a></li>
+                   <li><a href="#" target="_blank">Políticas de Privacidad</a></li>
+                   <li><a href="#">Cookies</a></li></ul>
+      </div>

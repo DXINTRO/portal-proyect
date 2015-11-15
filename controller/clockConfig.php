@@ -17,6 +17,11 @@ function getServerDateItems($inDate) {
 function clockDateString($inDate) {
     return date('l, F j, Y', $inDate);    // eg Tuesday, October 27, 2015 
 }
+function clockDateNumber($N) {
+     // eg date("y- m- d");2001-03-10                  este n es una semana mas
+    list($y, $m,$d) = explode("-", date("Y-m-d", strtotime('+' . $N . ' Week')));
+    return array($y, $m,$d);
+}
 
 function clockTimeString() {//etseeeeee
     $Today = time();
@@ -31,8 +36,25 @@ function Months($N) {// echo(Months(4)); retorna en 4 meses mas la fecha 2016-02
     return date("Y-n-d", strtotime('+' . $N . ' Months')) . "\n";
 }
 
-function Week($N) {// requiere un numero y retorna  iwual que month
-    return date("Y-m-d", strtotime('+' . $N . ' Week')) . "\n";
+function Week() {// //2015-12-30' retorna semana sigiente de inicio y fin
+    list ($year, $month, $day) = clockDateNumber(1);
+    # Obtenemos el numero de la semana
+    $semana = date("W", mktime(0, 0, 0, $month, $day, $year));
+
+# Obtenemos el día de la semana de la fecha dada
+    $diaSemana = date("w", mktime(0, 0, 0, $month, $day, $year));
+
+# el 0 equivale al domingo...
+    if ($diaSemana == 0) {
+        $diaSemana = 7;
+    }
+
+# A la fecha recibida, le restamos el dia de la semana y obtendremos el lunes
+    $primerDia = date("Y-m-d", mktime(0, 0, 0, $month, $day - $diaSemana + 1, $year));
+
+# A la fecha recibida, le sumamos el dia de la semana menos siete y obtendremos el domingo
+    $ultimoDia = date("Y-m-d", mktime(0, 0, 0, $month, $day + (7 - $diaSemana), $year));
+    return array($semana, $primerDia, $ultimoDia);
 }
 
 //echo 'Loading..';

@@ -6,8 +6,6 @@ if (!isset($_SESSION['piochaid'])) {
 } else {
     $header = $_SESSION['piochaid'];
     $id = $_SESSION['id'];
-    static $day = 0;
-    static $turn = 0;
     static $array;
     static $time;
     require_once '../model/Db.class.php';
@@ -102,61 +100,66 @@ try {
 }
 
 class fun_setTurn {
-
+private $day;
+private $turn;
+private $sql;
+private $bd;
+ private $stmt;
+   
 //put your code here
     function obtenerNameDay($param) {
         switch ($param) {
-            CASE "0": $day = 400;
+            CASE "0": $this->day = 400;
                 break;
-            CASE "1": $day = 401;
+            CASE "1": $this->day = 401;
                 break;
-            CASE "2": $day = 402;
+            CASE "2": $this->day = 402;
                 break;
-            CASE "3": $day = 403;
+            CASE "3": $this->day = 403;
                 break;
-            CASE "4": $day = 404;
+            CASE "4": $this->day = 404;
                 break;
-            CASE "5": $day = 405;
+            CASE "5": $this->day = 405;
                 break;
-            CASE "6": $day = 406;
+            CASE "6": $this->day = 406;
                 break;
-            DEFAULT: ;
+            DEFAULT: $this->day = null;
                 break;
         }
-        return $day;
+        return $this->day;
     }
         function obtenerNameTURN($param) {
         switch ($param) {
-            CASE "0": $turn = 800;
+            CASE "0": $this->turn = 800;
                 break;
-            CASE "1": $turn = 900;
+            CASE "1": $this->turn = 900;
                 break;
-            CASE "2": $turn = 1030;
+            CASE "2": $this->turn = 1030;
                 break;
-            CASE "3": $turn = 1200;
+            CASE "3": $this->turn = 1200;
                 break;
-            CASE "4": $turn = 1230;
+            CASE "4": $this->turn = 1230;
                 break;
-            CASE "5": $turn = 1400;
+            CASE "5": $this->turn = 1400;
                 break;
-            CASE "6": $turn = 1530;
+            CASE "6": $this->turn = 1530;
                 break;
-            CASE "7": $turn = 1730;
+            CASE "7": $this->turn = 1730;
                 break;
-            CASE "8": $turn = 1900;
+            CASE "8": $this->turn = 1900;
                 break;
-            DEFAULT: ;
+            DEFAULT: $this->turn = null;
                 break;
         }
-        return $turn;
+        return $this->turn;
     }
 
     function INSERT($header, $id, $day, $hor, $fila, $tpo, $time) {
         set_time_limit(0);
         try {
-            $bd = Db::getInstance();
-           $sql = "call setTurnos('" . $header . "','" . $id . "'," . $day . "," . $hor . "," . $fila . "," . $tpo . "," . $time . ");";
-           $stmt = $bd->ejecutar($sql);
+            $this->bd = Db::getInstance();
+           $this->sql = "call setTurnos('" . $header . "','" . $id . "'," . $day . "," . $hor . "," . $fila . "," . $tpo . "," . $time . ");";
+           $this->stmt = $bd->ejecutar($this->sql);
        } catch (Exception $ex) {
            echo $ex;
        }

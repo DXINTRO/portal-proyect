@@ -82,6 +82,36 @@ body {
 height: 26px;
 padding: 1px 12px;
 }
+
+ .msj {
+  border-radius: 5px;
+  font-size: 13px;
+  text-align: center;
+  position: absolute;
+ background: #707987  none repeat scroll 0% 0%;
+  left: 102%;
+  top: -3px;
+  width: 160px;
+  padding: 3px 10px;
+  color: #fff;
+}
+ .msj:after {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-right-color: #707987 ;
+  border-width: 8px;
+  margin-top: -8px;
+}
+
+
+
 @media screen and (max-width: 1280px) {
     .container.\31 25\25 {
         width: 100%;
@@ -209,26 +239,7 @@ body {
     /* letter-spacing: -0.015em; */
     background-color: #FAFAFA;
 }
-/* body, input, select, textarea {
-        color: #777;
-        font-family: "Source Sans Pro",sans-serif;
-font-size: 16px;
-font-weight: 300;
-/* letter-spacing: -0.015em; 
-background-color: #FAFAFA;
-} */
-/* a {
-        -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-        -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-        -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-        transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-        border-bottom: dotted 1px;
-        color: #e89980;
-        text-decoration: none;
-}
-a:hover {
-        border-bottom-color: transparent;
-} */
+
 strong, b {
     color: #646464;
     font-weight: 400;
@@ -408,7 +419,7 @@ form {
 .box {
     background: #fff;
     border-radius: 6px;
-    box-shadow: 0 2px 0 0 #e5e5e5;
+    box-shadow: 0 0 5px  #d8d8d8;
     margin: 0 0 2em 0;
     padding: 3em;
 }
@@ -985,49 +996,29 @@ body.landing #main {
     margin-left: 0;
     padding-left: 0;
 }
-/* CTA */
-/* #cta {
-        background: #e89980;
-        color: #f9e5df;
-        padding: 3.5em 0 4em 0;
-        text-align: center;
+#footer1 a {
+    color: #BABABA;
+    display: inline-block;
+    font-family: "ff-din-round-web-pro",sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 10px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    
+} 
+
+#footerMain {
+    clear: both;
+    text-align: right;
+    border-top: 1px solid #CFCFCF;
+    padding-top: 10px;
+   
+      
 }
-#cta h2, #cta h3, #cta h4, #cta h5, #cta h6 {
-        color: inherit;
+#footer1 li {
+    display: inline;
 }
-#cta form {
-        margin: 0 auto;
-        max-width: 100%;
-        width: 25em;
-}
-#cta input[type="submit"],  #cta input[type="reset"],  #cta input[type="button"],  #cta .button {
-        box-shadow: none;
-        background: #fff;
-        color: #e89980;
-}
-#cta input[type="text"],  #cta input[type="password"],  #cta input[type="email"],  #cta select,  #cta textarea {
-        color: #ffffff;
-        background: rgba(255, 255, 255, 0.15);
-        border: 0;
-}
-#cta input[type="text"]:focus,  #cta input[type="password"]:focus,  #cta input[type="email"]:focus,  #cta select:focus,  #cta textarea:focus {
-        box-shadow: inset 0 0 0 2px #fff;
-}
- #cta ::-webkit-input-placeholder {
- color: rgba(255, 255, 255, 0.75) !important;
-}
- #cta :-moz-placeholder {
- color: rgba(255, 255, 255, 0.75) !important;
-}
- #cta ::-moz-placeholder {
- color: rgba(255, 255, 255, 0.75) !important;
-}
- #cta :-ms-input-placeholder {
- color: rgba(255, 255, 255, 0.75) !important;
-}
-#cta .formerize-placeholder {
-        color: rgba(255, 255, 255, 0.75) !important;
-} */
 /* Wide */
 @media screen and (max-width: 1920px) {
     /* Basic */

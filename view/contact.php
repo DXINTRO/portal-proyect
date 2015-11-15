@@ -54,7 +54,7 @@ $header = $_SESSION['piochaid'];
                     </div>
                     <div class="row uniform 50%">
                         <label for="form_subject" >Asunto</label>
-                        <div class="12u">
+                        <div class="12u" >
                             <input  type="text" id="form_subject" name="form_subject" maxlength="72"  size="40"  placeholder="Asunto"></br>
                         </div>
                     </div>

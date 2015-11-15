@@ -13,22 +13,22 @@
  */
 class Config {
     //put your code here
-
+ private $config;
      
      	public function get_config(){
 
         // Nombre del servidor 
-        $config['DB_HOST'] = '127.0.0.1';  
+        $this->config['DB_HOST'] = '127.0.0.1';  
 
         // Nombre de usuario del servidor
-	$config['DB_USER'] = 'admin';
+	$this->config['DB_USER'] = 'admin';
 
 	// Contraseña del usuario anterior
-	$config['DB_PASS'] = 'admin';
+	$this->config['DB_PASS'] = 'admin';
 
 	// Nombre de la base de datos del sistema
-	$config['DB_NAME'] = 'queryjumbo';
+	$this->config['DB_NAME'] = 'queryjumbo';
      
-        return $config;
+        return $this->config;
      } 
 }

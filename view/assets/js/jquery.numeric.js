@@ -1,14 +1,4 @@
-/*
- *
- * Copyright (c) 2006-2014 Sam Collett (http://www.texotela.co.uk)
- * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
- * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
- *
- * Version 1.4.1
- * Demo: http://www.texotela.co.uk/code/jquery/numeric/
- *
- */
- 
+
 $(document).ready(function tablefull() {
     $('input[type=radio][name=priority]').change(function() {
 	var id = ["#dt","#lt","#mt","#mit","#jt","#vt","#st"];
@@ -79,8 +69,10 @@ $(document).ready(function(){
 	$($cols[i]).addClass('hover'); }).mouseleave(function(){
 	var i = ($(this).prevAll('td').length)/2;
 	$($cols[i]).removeClass('hover');});
-});
+    
+    
 
+});
 
 (function(factory){
 	if(typeof define === 'function' && define.amd){
@@ -105,7 +97,6 @@ $(document).ready(function(){
  * @example  $(".numeric").numeric({ decimalPlaces : 2 }); // only allow 2 decimal places
  * @example  $(".numeric").numeric(null, callback); // use default values, pass on the 'callback' function
  *<script type="text/javascript" >$(".input-num").numeric({ decimal: false, negative: false }, function() { this.value = ""; this.focus(); });</script>No negative values (integer only):
-
  */
 $.fn.numeric = function(config, callback)
 {
@@ -127,7 +118,6 @@ $.fn.numeric = function(config, callback)
 	// set data and methods
 	return this.data("numeric.decimal", decimal).data("numeric.negative", negative).data("numeric.callback", callback).data("numeric.decimalPlaces", decimalPlaces).keypress($.fn.numeric.keypress).keyup($.fn.numeric.keyup).blur($.fn.numeric.blur);
 };
-
 $.fn.numeric.keypress = function(e)
 {
 	// get decimal character and determine if negatives are allowed
@@ -232,11 +222,9 @@ $.fn.numeric.keypress = function(e)
                 allow = false;
             }
         }
-
 	}
 	return allow;
 };
-
 $.fn.numeric.keyup = function(e)
 {
 	var val = $(this).val();
@@ -249,7 +237,6 @@ $.fn.numeric.keyup = function(e)
 		var decimal = $.data(this, "numeric.decimal");
 		var negative = $.data(this, "numeric.negative");
         var decimalPlaces = $.data(this, "numeric.decimalPlaces");
-       
 		// prepend a 0 if necessary
 		if(decimal !== "" && decimal !== null )
 		{
@@ -271,7 +258,6 @@ $.fn.numeric.keyup = function(e)
 			}
 			val = this.value;
 		}
-
 		// if pasted in, only allow the following characters
 		var validChars = [0,1,2,3,4,5,6,7,8,9,'-',decimal];
 		// get length of the value (to loop through)
@@ -323,7 +309,6 @@ $.fn.numeric.keyup = function(e)
 				}
 			}
 		}
-
         // remove extra decimal places
         if(decimal && decimalPlaces > 0)
         {
@@ -339,7 +324,6 @@ $.fn.numeric.keyup = function(e)
 		$.fn.setSelection(this, [carat, selectionEnd]);
 	}
 };
-
 $.fn.numeric.blur = function()
 {
 	var decimal = $.data(this, "numeric.decimal");
@@ -355,12 +339,10 @@ $.fn.numeric.blur = function()
 		}
 	}
 };
-
 $.fn.removeNumeric = function()
 {
 	return this.data("numeric.decimal", null).data("numeric.negative", null).data("numeric.callback", null).data("numeric.decimalPlaces", null).unbind("keypress", $.fn.numeric.keypress).unbind("keyup", $.fn.numeric.keyup).unbind("blur", $.fn.numeric.blur);
 };
-
 // Based on code from http://javascript.nwbox.com/cursor_position/ (Diego Perini <dperini@nwbox.com>)
 $.fn.getSelectionStart = function(o)
 {
@@ -372,14 +354,12 @@ $.fn.getSelectionStart = function(o)
         var r = document.selection.createRange().duplicate();
         r.moveEnd('character', o.value.length);
 		if (r.text == '') return o.value.length;
-
 		return Math.max(0, o.value.lastIndexOf(r.text));
 	} else {
         try { return o.selectionStart; }
         catch(e) { return 0; }
     }
 };
-
 // Based on code from http://javascript.nwbox.com/cursor_position/ (Diego Perini <dperini@nwbox.com>)
 $.fn.getSelectionEnd = function(o)
 {
@@ -392,7 +372,6 @@ $.fn.getSelectionEnd = function(o)
 		return r.text.length
 	} else return o.selectionEnd
 }
-
 // set the selection, o is the object (input), p is the position ([start, end] or just start)
 $.fn.setSelection = function(o, p)
 {
@@ -424,5 +403,23 @@ $.fn.setSelection = function(o, p)
         }
 	}
 };
-
 }));
+
+  $.getScript('//cdnjs.cloudflare.com/ajax/libs/summernote/0.6.16/summernote.min.js',function(){
+ $('#mail-body').summernote({
+     height: 200,                // set editor height
+  minHeight: 100,             // set minimum height of editor
+  maxHeight: 400,             // set maximum height of editor
+  
+  toolbar: [
+    ['style', ['style','bold', 'italic', 'underline', 'clear']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['height', ['height']],
+    ['Insert', ['table', 'hr', 'link']],
+    ['Misc',['codeview','undo','redo','help']]]
+});
+
+});
+    

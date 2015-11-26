@@ -4,7 +4,7 @@ if (!isset($_SESSION['piochaid'])) {
 header("location:../index.php");
 } else {
 $subcrip=$_SESSION['substatus'];
-$suspenc=$_SESSION['released'];
+$suspenc=$_SESSION['releasedS'];
 if ($subcrip==="0"||$suspenc==="1") {
  header("location:account.php");
 }
@@ -48,6 +48,7 @@ include_once ("../controller/clock.php");
                 <br>
                 <span id="liveclock" ><?php echo(clockTimeString($Today))?></span> </header>
             <div class="box">
+               <span class="dot-online-offline" style="float: left; width: 16px; height: 16px; background: url('http://o1.t26.net/images/big2v1.png'); background-position: 0 -792px" data-toggle="tooltip"  title="Online"></span>
                 <form   id="formPrimary" class="form-horizontal" action="../controller/fun_setTurn.class.php" method="POST"  onsubmit="return validateT()">
                     <fieldset>
                         <!-- Form Name -->
@@ -211,9 +212,10 @@ include_once ("../controller/clock.php");
             </div>
           </section>
         <!-- Footer -->
+          <?php include_once ("modal/modal_showdetall.php"); ?>
 <?php include_once ("..//model/footer.php"); ?>
     </div>  
-        <?php include_once ("modal/modal_showdetall.php"); ?>
+      
     
     <!-- Scripts -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

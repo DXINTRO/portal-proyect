@@ -5,7 +5,7 @@ echo '
 <li><a href="download"><i class="fa fa-cloud-download"></i> Descargar&nbsp Planilla.</a></li>
 <li><a href="gift"><i class="fa fa-gift"></i> Regalar T. 17:30/19:00.</a></li>
  <li><a href="account"><i class="fa fa-cogs"></i> Cuenta.</a></li>
-<li><a href="contact"><i class="fa fa-envelope-o"></i> Contact.</a></li>
+<li><a href="#" onclick="modalContact();"><i class="fa fa-envelope-o"></i> Contact.</a></li>
 <li>&nbsp;</li>
 <li> <a href="#"><i class="fa fa-wrench"></i> Gestionar..</a>
 <ul>

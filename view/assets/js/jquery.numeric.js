@@ -54,8 +54,8 @@ $(document).ready(function tablefull() {
 			}  
             break;
 		case '3' :
-            $('#Formredi').each (function(){
-			this.reset();});
+            
+               $(".input-num").val("");
             break;
     } 
     });
@@ -405,21 +405,5 @@ $.fn.setSelection = function(o, p)
 };
 }));
 
-  $.getScript('//cdnjs.cloudflare.com/ajax/libs/summernote/0.6.16/summernote.min.js',function(){
- $('#mail-body').summernote({
-     height: 200,                // set editor height
-  minHeight: 100,             // set minimum height of editor
-  maxHeight: 400,             // set maximum height of editor
-  
-  toolbar: [
-    ['style', ['style','bold', 'italic', 'underline', 'clear']],
-    ['fontsize', ['fontsize']],
-    ['color', ['color']],
-    ['para', ['ul', 'ol', 'paragraph']],
-    ['height', ['height']],
-    ['Insert', ['table', 'hr', 'link']],
-    ['Misc',['codeview','undo','redo','help']]]
-});
 
-});
     

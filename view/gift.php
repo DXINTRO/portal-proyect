@@ -16,11 +16,11 @@ if (!isset($_SESSION['piochaid'])) {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" href="images/icon/gift.png" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="assets/css/mainbody.css" />
-
-    </head>
+          <link rel="stylesheet" href="assets/css/form.css" />
+        <link rel="stylesheet" href="assets/dist/bootstrap-table.min.css" />
+       </head>
     <body>
+        <div data-progress="99" data-progress-text="100%" style="transform: translate3d(100%, 0px, 0px);" class="pace-progress"></div>
         <div id="page-wrapper">
             <!-- Header -->
             <header id="header">
@@ -29,7 +29,7 @@ if (!isset($_SESSION['piochaid'])) {
                     <ul>
                         <li><a href="index"><i class="fa fa-home"></i> Home</a></li>
                         <li> <a href="#" class="icon fa-angle-double-down"><i class="fa fa-bars"></i> Menu</a>
-                            <ul><?php require_once ("..//model/menulayout.php"); //incluimos el archivo menulayout.php  ?></ul>
+                            <ul><?php require_once ("..//model/menulayout.php"); //incluimos el archivo menulayout.php     ?></ul>
                         </li>
                         <li><a href="../controller/cerrar.php" class="button"><i class="fa fa-sign-out"></i> Salir&nbsp (Logout)</a></li>
                     </ul>
@@ -37,49 +37,42 @@ if (!isset($_SESSION['piochaid'])) {
             </header>
             <!-- Main -->
             <section id="main" class="container 75%">
-                <header>
+                <header >
+                     <header>
                     <h2>Cambio de turno</h2>
-                    <p>Aquí podrás cambiar el turno de 17:30 o de 19:00 del día domingo.</p><br/>
-                    <p>Recuerda le a tu compañero que puede  enviar los turnos desde las 12:00 hasta 21.00 del día domingo.</p>
+                    <p>Aquí podrás cambiar el turno de 17:30 o de 19:00 del día domingo.<br/><small>Recuerda le a tu compañero que puede  enviar los turnos desde las 12:00 hasta 21.00 del día domingo.</small></p><br/>
                 </header>
-                <div class="12u">
-                    <!-- Lists -->
+                    <img style="width:133px" src="images/gift-world-blue.png">
+                </header>
+                             <!-- Lists -->
                     <section class="box">
-                        <form action="#" method="post" accept-charset="UTF-8">
-                            <div class="row uniform 50%">
-                                <div class="6u 12u(mobilep)">
-                                    <ul class="alt">
-                                        <li><input type="text" name="name"  value="juan perez" readonly placeholder="Name" /></li>
-                                        <li><label>&nbsp Cambia turno a:</label></li></ul>
-                                </div>
-                                <div class="6u 12u(mobilep)"><!-- 347.133 x 139.05 -->
-                                    <div class="alert alert-danger" role="alert">
-                                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                                        <span class="sr-only">Error:</span>
-                                        Enter a valid email address
+                        <div class="row uniform">
+                                <!-- Appended checkbox -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" id="lblSearh" for="buscar">Buscar por ?</label>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <input type="search" onclick="oneclick(this)" class="form-control" id="buscar" name="buscar" onkeyup="keyup(this)" placeholder="Ingrese un dato">
+                                            <span class="msj"  id="errormsj" >No se encontro nada :(</span>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" id="btnSearh" disabled="disabled" onclick="FormGiftYlayoll($('#buscar'))" type="button"><i class="fa fa-search"></i>&nbsp;Buscar</button>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-
-                            </div>
-                            <div class="row uniform 50%">
-                                <ul class="actions">
-                                    <li><input type="email" name="email" id="email" size="30" value=""  placeholder="Email" /></li>
-                                    <li><input type="text" name="subject" id="subject" size="6" value="" placeholder="Piocha" /></li>
-                                    <li><button class="btn btn-info btn-large"> Buscar empaque  <i class="fa fa-search"></i></button></li>
-
-                                </ul>
-                            </div>
-                            <hr></hr>
-
-                            <div class="row uniform">
-                                <div class="12u">
-                                    <ul class="actions align-center">
-                                        <li><input type="submit" value="Cambiar" /></li>
-                                    </ul>
+                             <div class="form-group">
+                                 </br>
+                                 <label class="col-md-4 control-label" id="hand" for="Sradio"><i class="fa fa-hand-o-right"></i></label>
+                                    <div class="col-md-4">
+                                        <div class="radio"><i  data-toggle="tooltip" data-placement="top" title="Filtra la busqueda, hazlo por piocha o por correo ;)" class="fa fa-info-circle"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <label for="radios-1" class="checkbox-inline">
+                                                <input name="Sradio" id="radios-1"  onclick="Tbusqueda(this)" value="1" type="radio">Correo</label>
+                                               <label for="radios-2" class="checkbox-inline">
+                                                <input name="Sradio" id="radios-2"  onclick="Tbusqueda(this)" value="2" type="radio">Piocha </label>
+                                        </div><span class="msj"  id="errormsjradio" >Seleccione un filtro de Búsqueda</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                        <hr></hr>				
+                        </div> 
                         <div class="row uniform 50%">
                             <div class="table-responsive">
                                 <table class="table table-condensed" >
@@ -104,27 +97,38 @@ if (!isset($_SESSION['piochaid'])) {
                                             <td>Celda </td>
                                             <td align="right"><button class="btn btn-danger btn-small"><i class="icon-repeat"></i> Cancelar</button></td>
                                         </tr>
-
                                     </tbody>
                                 </table>
                             </div></div>
-                    </section>
-                </div>
+                        <hr>
+                        <div id="disqus_thread"></div>
+                        <script>
+                            (function () { // DON'T EDIT BELOW THIS LINE
+                                var d = document, s = d.createElement('script');
+                                s.src = '//portalup.disqus.com/embed.js';
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                        </script></section>
+                    <!-- Footer -->
             </section>
-
-            <!-- Footer -->
+               <?php include_once ("modal/modal_showDatos.php"); ?>
             <?php include_once ("..//model/footer.php"); ?>
         </div>
-        <!-- Scripts -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      
+         <!-- Scripts -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.dropotron.min.js"></script>
         <script src="assets/js/jquery.scrollgress.min.js"></script>
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
-        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
         <script src="assets/js/main.js"></script>
-    </body>
-</html>	
+        <script src="assets/js/ajax.js"></script>
+       <script src="assets/dist/bootstrap-table.min.js"></script>
+        <script src="assets/js/pace.min.js"></script>   <!--barra carga-->
+        </body>
+        </html>	

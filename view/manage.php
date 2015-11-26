@@ -37,43 +37,7 @@ $header= $_SESSION['piochaid'] ;
 
             <!-- Main -->
             <section id="main" class="container 75%">
-                <header>
-                    <h2>Cambio de turno </h2>
-                    <p>Aqui podras cambiar el turno de 17:30 o de 19:00 del dia domingo.</p><br/>
-                    <p>Recuerdale a tu compañero que púede  enviar los turnos desde las 12:00 hasta 21.00 del dia domingo.</p>
 
-                </header>
-                <div class="box">
-                    <form method="post" action="#">
-                        <div class="row uniform 50%">
-                            <div class="6u 12u(mobilep)">
-                                <input type="text" name="name" id="name" value="juan perez" placeholder="Name" />.
-                            </div>
-                            <div class="6u 12u(mobilep)">
-                                <input type="email" name="email" id="email" value="" placeholder="Email" />
-                            </div>
-                        </div>
-                        <div class="row uniform 50%">
-                            <div class="12u">
-                                <input type="text" name="subject" id="subject" value="" placeholder="piocha" /><img src="images/boton_busca_2012.gif"/>
-                            </div>
-                        </div>
-                        <div class="row uniform 50%">
-                            <div class="12u">
-
-                            </div>
-                        </div>
-                        <div class="row uniform">
-                            <div class="12u">
-                                <ul class="actions align-center">
-                                    <li><input type="submit" value="cambiar" /></li>
-                                </ul>
-                            </div><div class="12u">
-                               
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </section>
 
             <!-- Footer -->
@@ -88,7 +52,6 @@ $header= $_SESSION['piochaid'] ;
             <script src="assets/js/jquery.scrollgress.min.js"></script>
             <script src="assets/js/skel.min.js"></script>
             <script src="assets/js/util.js"></script>
-            <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
             <script src="assets/js/main.js"></script>
 
     </body>

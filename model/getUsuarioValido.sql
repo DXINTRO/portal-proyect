@@ -1,6 +1,6 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getUsuarioValido`(in log varchar(45),in pas varchar(60),in est int(1))
 BEGIN
- SELECT id,piochaid,email,user_passwd,disabled,displayname,displayapellidom,displayapellidop,substatus,admin,tipoduser,tiempoDesde,tiempoAsta,regaladode,released,suspencion.desde,suspencion.asta
+ SELECT id,piochaid,email,user_passwd,disabled,displayname,displayapellidom,displayapellidop,substatus,admin,tipoduser,timessent.released,tiempoDesde,tiempoAsta,regaladode,suspencion.released,suspencion.desde,suspencion.asta,fechanaciminto,carrera_idcarrera,cellphone,otrophone,direccion
 FROM users 
 INNER JOIN userinformation ON  users.piochaid = userinformation.users_piochaid
 INNER JOIN subcripccion  ON   userinformation.users_piochaid = subcripccion.users_piochaid

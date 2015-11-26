@@ -33,12 +33,18 @@ class fun_inicio {
             $_SESSION['substatus'] = $this->rawdata[8];
             $_SESSION['admin'] = $this->rawdata[9];
             $_SESSION['tipouser'] = $this->rawdata[10];
-            $_SESSION['tiempoDesde'] = $this->rawdata[11];
-            $_SESSION['tiempoAsta'] = $this->rawdata[12];
-            $_SESSION['regaladode'] = $this->rawdata[13];
-            $_SESSION['released'] = $this->rawdata[14];
-           $_SESSION['desde'] = $this->rawdata[15];
-           $_SESSION['asta'] = $this->rawdata[16];
+              $_SESSION['releasedT'] = $this->rawdata[11];
+            $_SESSION['tiempoDesde'] = $this->rawdata[12];
+            $_SESSION['tiempoAsta'] = $this->rawdata[13];
+            $_SESSION['regaladode'] = $this->rawdata[14];
+            $_SESSION['releasedS'] = $this->rawdata[15];
+           $_SESSION['desde'] = $this->rawdata[16];
+           $_SESSION['asta'] = $this->rawdata[17];
+           $_SESSION['fechanaciminto'] = $this->rawdata[18];
+           $_SESSION['carrera_idcarrera'] = $this->rawdata[19];
+           $_SESSION['cellphone'] = $this->rawdata[20];
+           $_SESSION['otrophone'] = $this->rawdata[21];
+           $_SESSION['direccion'] = $this->rawdata[22];
              header("location:../index.php");
             
             

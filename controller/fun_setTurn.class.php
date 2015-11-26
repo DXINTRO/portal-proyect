@@ -159,7 +159,7 @@ private $bd;
         try {
             $this->bd = Db::getInstance();
            $this->sql = "call setTurnos('" . $header . "','" . $id . "'," . $day . "," . $hor . "," . $fila . "," . $tpo . "," . $time . ");";
-           $this->stmt = $bd->ejecutar($this->sql);
+           $this->stmt = $this->bd->ejecutar($this->sql);
        } catch (Exception $ex) {
            echo $ex;
        }

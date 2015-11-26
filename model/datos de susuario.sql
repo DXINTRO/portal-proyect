@@ -36,7 +36,7 @@ INNER JOIN  suspencion ON users.piochaid = suspencion.users_piochaid;
   
   call getTurnos('c60');
   
- 
+ call install();
   
   
   
@@ -82,9 +82,9 @@ INSERT INTO `queryjumbo`.`userinformation` (`users_piochaid`,`displayname`, `dis
 INSERT INTO `queryjumbo`.`subcripccion` (`desde`, `asta`, `indefinido`, `substatus`, `users_piochaid`) VALUES ('2008-7-04', '2016-7-04', '1', '1', 'c60');
 
 
-/*inserta detos del tiempo de envio*/
+/*inserta detos del tiempo de envio si esta en 0 esta desactivado si en 1 activado*/
 
-INSERT INTO `queryjumbo`.`timessent` (`timeatual`, `timeactual2`, `tiempoDesde`, `tiempoAsta`,`regaladode`, `users_piochaid`) VALUES ('2015-08-04', '2015-08-04', '2015-12-04', '2015-08-04','c61','c60');
+INSERT INTO `queryjumbo`.`timessent` (`released`,`timeatual`, `tiempoDesde`, `tiempoAsta`,`regaladode`, `users_piochaid`) VALUES ('0','2015-08-04', '2015-12-04', '2015-08-04','c61','c60');
 /*inserta  datos de suspencion  relased es 1 :( si es 0 :)*/
 
 
@@ -98,7 +98,7 @@ INSERT INTO `queryjumbo`.`timessent` (`timeatual`, `timeactual2`, `tiempoDesde`,
 --------------------------------------------------------------------------------------------------------
 /*agregar turnos a la bd*/
 /*primero se crea la planilla donde 1 es activa*/
-INSERT INTO `queryjumbo`.`planilla` (`idplanilla`,`fechainicio`, `fechafinal`, `comntario`, `stado`) VALUES ('300','2015-12-31', '2015-12-31', '', '1');
+INSERT INTO `queryjumbo`.`planilla` (`idplanilla`,`fechainicio`, `fechafinal`, `asunto`, `comntario`, `stado`) VALUES ('300','2015-12-31', '2015-12-31', 'asunto','eddeede', '1');
 /*despues se le establese su dimencionado*/
 
 
@@ -182,14 +182,20 @@ CALL tipoUsuarios(17);//resultado='Admin'
 
 */
 
+SELECT * FROM queryjumbo.users where piochaid LIKE 'c7%'
+
+SELECT * FROM dia  where dia.iddias= 400  LIMIT 3 ;
+$sql = "SELECT * FROM Orders LIMIT 10 OFFSET 15";users
 
 
 
 
+SELECT * FROM queryjumbo.users;
+select count(email) as total from  queryjumbo.users where email='dxintro@hotmail.cl';
 
+select user_passwd from queryjumbo.users where user_passwd like 'e10adc3949ba59abbe56e057f20f883e' and piochaid like 'c60';
 
+select count(user_passwd) as total from  queryjumbo.users where user_passwd like 'e10adc3949ba59abbe56e057f20f883e' and piochaid like 'c60';
 
-
-
-
+select count(user_passwd) as total from  queryjumbo.users where user_passwd like 'e10adc3949ba59abbe56e057f20f883e' and piochaid like 'c60';
 

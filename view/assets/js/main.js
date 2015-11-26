@@ -1,4 +1,4 @@
-/* global skel */
+//////////////////////////////////////GLOBAL//////////////////////////////////////////////////////////////////////////////////////////
 var q = 1;
 // this is a global variable
 var temp = null;
@@ -36,7 +36,7 @@ $(function () {
     $('<div id="navButton">' + '<a href="#navPanel" class="toggle"></a>' + '</div>').appendTo($body);
 
     // Navigation Panel.
-    $('<div id="navPanel" style="display:none;">' + '<nav>' + $('#nav').navList() + '</nav>' + '</div>')
+    $('<div id="navPanel">' + '<nav>' + $('#nav').navList() + '</nav>' + '</div>')
             .appendTo($body)
             .panel({delay: 500, hideOnClick: true, hideOnSwipe: true, resetScroll: true, resetForms: true, side: 'left', target: $body, visibleClass: 'navPanel-visible'});
 
@@ -71,8 +71,17 @@ var progress = setInterval(function () {// funcion para la barra de carga
     }
     $bar.text($bar.width() / 4 + "%");
 }, 800);
+   jQuery('.numbersOnly').keyup(function () { // funcion para solo numeros basico
+    this.value = this.value.replace(/[^0-9\.]/g,'');
+});
+   //////////////////////////////////////////document.ready///////////////////////////////////////////////////////////////////////////////
+$( document ).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();  
+});
 
 
+   //////////////////////////////////////////toma de turno///////////////////////////////////////////////////////////////////////////////
+     
 function cargarT(obj) {
     var index = obj.options[obj.selectedIndex].value; //index left
     var name = $(obj).attr("name");
@@ -132,4 +141,24 @@ function button_more() {//funcion agregar filas en principal
         else if(q >=5) {$('#five').show(500);$('#five').css("display","inline-table");q=0;}
         q++;
 }
+//////////////////////////////////////////gift//////////////////////////////////////////////////////////////////////////////////////////
 
+function Tbusqueda(e)
+{    $("#buscar").val("");
+ //  $("#buscar").autocomplete("destroy");
+   // alert($(e).val());
+    var ops=$(e).val();
+    if (ops==='1') { $('#lblSearh').text("Buscar por Correo :"); $('#buscar').attr('type', 'email');  }else if (ops==='2'){$('#lblSearh').text("Buscar por Piocha :"); $('#buscar').attr('type', 'search'); }
+    else if (ops==='0'){$('#lblSearh').text("Buscar por Nombre :"); $('#buscar').attr('type', 'search'); }
+    $('#btnSearh').attr('disabled', false);
+    
+}
+
+
+
+
+//////////////////////////////////////////MODALS//////////////////////////////////////////////////////////////////////////////////////////
+function modalContact(){
+    $('#modal_showContact').modal({show: true,  backdrop: 'static',
+  keyboard: false});
+}

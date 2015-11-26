@@ -10,17 +10,18 @@
     </ul>
     <ul class="copyright">
         <li>&copy; Dxintro. All rights reserved.</li>
-        <li>About: <a href="#" id="tooltip" data-toggle="tooltip"  title="versión 1.5">PORTAL UP</a></li>
+        <li>About: <a href="#"  data-toggle="tooltip" data-placement="right" title="versión 1.1215">PORTAL UP</a></li>
     </ul>
    
 </footer>
+
  <div id="footerMain">
                <ul id="footer1">
-                   <li class=" first"><a href="#">Sobre Portal UP</a></li>
-                   <li><a href="contact">Contacto</a></li>
+                   <li  data-toggle="tooltip" data-placement="top" title="Quiénes Somos"><a href="#">Sobre PortalUP</a></li>
+                   <li><a href="#" onclick="modalContact();" data-toggle="tooltip" data-placement="top" title="Póngase en contacto con nosotros" >Contacto</a></li>
                    <li><a href="mailto: ign_latam@ign.com">Anúnciate</a></li>
-                   <li><a href="#">Prensa</a></li>
-                   <li><a href="#" target="blank">Legales</a></li>
+                   <li><a href="#" target="blank" data-toggle="tooltip" data-placement="top" title="Información Legal | PortalUP" >Legales</a></li>
                    <li><a href="#" target="_blank">Políticas de Privacidad</a></li>
                    <li><a href="#">Cookies</a></li></ul>
       </div>
+ <?php include_once ("modal/modal_showContact.php"); ?>

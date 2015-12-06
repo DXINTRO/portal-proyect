@@ -70,7 +70,7 @@ class fun_giftYlayoll {
             $this->bd = Db::getInstance();
             $result = $this->bd->ejecutar($script);
             $dataa= array();
-            while($this->result_array = mysql_fetch_array($result)){
+            while($this->result_array = mysqli_fetch_array($result)){
                 array_push($dataa,$this->result_array[$index]);                            
                 }
                echo json_encode($dataa);         
@@ -86,7 +86,7 @@ class fun_giftYlayoll {
             $this->sql = "call getdatos('" . trim($param) . "'," . $num . ");";
           
             $this->stmt = $this->bd->ejecutar($this->sql);$i=0;
-            while ($row = mysql_fetch_array($this->stmt)) {
+            while ($row = mysqli_fetch_array($this->stmt)) {
                  $this->rawdata[$i]['id']=$row["id"];
                    $this->rawdata[$i]['Piocha']=$row["Piocha"];
                      $this->rawdata[$i]['Nombre']=$row["Nombre"];
@@ -99,7 +99,7 @@ class fun_giftYlayoll {
              //$file = 'bootstrap_fill.json';
             // $file_put_contents($file,$json_string);
             
-            mysql_free_result($this->stmt);
+       
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
         }

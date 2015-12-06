@@ -60,7 +60,7 @@ body {
 .container {
     width: 413px;
 }
- #navPanel, #navButton ,#loadin1,#loadin2,#loadin3,#loadin4,#loadin5,#loadin6,#loadin7,#loadin0{display:none;}
+.msj, #navPanel, #navButton ,#loadin1,#loadin2,#loadin3,#loadin4,#loadin5,#loadin6,#loadin7,#loadin0{display:none;}
 .btn-info{
     margin: 0px 30px 15px 0px !important;
 }
@@ -267,7 +267,7 @@ body {
     background: #f5f5f5;
     color: #777;
     font-family: "Source Sans Pro",sans-serif;
-    font-size: 16px;
+   // font-size: 16px;
  
     /* letter-spacing: -0.015em; */
     background-color: #FAFAFA;

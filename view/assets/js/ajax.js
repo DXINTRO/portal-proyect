@@ -1,6 +1,24 @@
-//Hide Hints
-$(".msj").hide();
+
 /////////////////////////////////////////////////VALIDACIONES///////////////////////////////////////////////////////////////////////////////////////////////////////////
+function dialog(msj){
+    
+      BootstrapDialog.alert({
+            title: 'WARNING',
+            message: msj,
+            type: BootstrapDialog.TYPE_WARNING, // <-- Default value is BootstrapDialog.TYPE_PRIMARY
+            closable: true, // <-- Default value is false
+            draggable: true, // <-- Default value is false
+            
+            callback: function(result) {
+                // result will be true if button was click, while it will be false if users close the dialog directly.
+               // alert('Result is: ' + result);
+            }
+        });
+    
+    
+};
+
+
 function ValitatePass() {
    
     if ($("#newpassword").val().length > 7) {
@@ -196,6 +214,8 @@ $('#formPrimary').submit(function (e) {
                 $('#loadin3').show(0);
             }
         }).done(function (data, textStatus, result) {//true
+             var obj = jQuery.parseJSON(data);
+              if (obj.RChanger==='0') {dialog('ya! tienes un cambio anterior no puedes hacer otro');}else if(obj.RChanger==='1'){dialog('El usuario ya tiene un turno de 17 o 19 hrs , no puedes cambiarle ');}else if(obj.RChanger==='2'){dialog('tu no tienes  turnos para regalar');}else if(obj.RChanger==='3'){dialog('El usuario ya tiene un cambio ya por otra persona ');} else if(obj.RChanger===""){var t = setTimeout("location.reload();", 2800);}
             console.log("Stado? : " + textStatus);
             console.log("son: " + data);
         })
@@ -208,6 +228,7 @@ $('#formPrimary').submit(function (e) {
                      $('#btnSearh').attr('disabled', true);
                       $('#btncancelar').attr('disabled', true);
                       var t = setTimeout("$('#modalDatos').modal('hide');", 2700);
+                       
                 });
         return false;
 
@@ -323,6 +344,28 @@ function verDetalle() {
                 });
         return false;
     }
+    
+    function verMiscambios(e) {
+       var codigo = $("#piocha").val();
+       var IDRow= null;
+         if (e) { IDRow=e;  }
+      var data=  {"piocha" : codigo, "IDRow" : IDRow};
+                 $.ajax({
+            type: 'POST',
+            data: data,
+            url: '../controller/fun_gift.class.php'
+            }) .done(function (data, textStatus, result) {//true
+                 console.log("Stado? : " + data);
+                      $('#getmischangers').bootstrapTable('destroy');
+                      if (data!=="") {
+                      var obj = jQuery.parseJSON(data);
+                    $('#getmischangers').bootstrapTable({  data: obj, flat: true  });
+                     
+                 }else{ }})//ocultar la tabla
+                .fail(function () { //false
+                    console.log("Ha ocurrido un error! :(");
+                });
+         }
     
 function modalviewAcoount(e) {
     if ($(e).attr("id")==="sub") {

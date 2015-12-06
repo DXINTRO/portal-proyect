@@ -40,8 +40,8 @@
                                 <div class="col-xs-4 col-md-4"><p><i class="fa fa-caret-right">&nbsp;</i><span class="badge badge-warning">2</span> Dias</p></div>
                             </div>
                             <div class="row">
-                                <div class="col-xs-6"><a>Contrato de licencia de usuario final</a></div>
-                            </div></br>
+                                ><a>Contrato de licencia de usuario final</a></div>
+                            </br>
                         </div>
 
                         <div id="menu" class="col-sm-8 menu">

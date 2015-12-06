@@ -23,6 +23,7 @@ function clockDateNumber($N) {
     return array($y, $m,$d);
 }
 
+
 function clockTimeString() {//etseeeeee
     $Today = time();
     date_default_timezone_set('America/Santiago');
@@ -31,13 +32,20 @@ function clockTimeString() {//etseeeeee
     //  return ((int)$sec );
     return date('Gis', $Today) . (int)$sec;
 }
+function clockTimeNumber() {//etseeeeee retur 12:50:00
+    $Today = time();
+    date_default_timezone_set('America/Santiago');
+    
+    //  return ((int)$sec );
+    return date('G:i:s', $Today);
+}
 
 function Months($N) {// echo(Months(4)); retorna en 4 meses mas la fecha 2016-02-28 
     return date("Y-n-d", strtotime('+' . $N . ' Months')) . "\n";
 }
 
-function Week() {// //2015-12-30' retorna semana sigiente de inicio y fin
-    list ($year, $month, $day) = clockDateNumber(1);
+function Week($N) {// //2015-12-30' retorna semana sigiente de inicio y fin
+    list ($year, $month, $day) = clockDateNumber($N);
     # Obtenemos el numero de la semana
     $semana = date("W", mktime(0, 0, 0, $month, $day, $year));
 

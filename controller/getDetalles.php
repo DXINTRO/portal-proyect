@@ -12,7 +12,7 @@ $stmt = $bd->ejecutar($sql);
 
 
 
-  while($row = mysql_fetch_array($stmt))
+  while($row = mysqli_fetch_array($stmt))
   {
       if (($row["hora"]==="800")||($row["hora"]==="900")) {
           $rest = (substr($row["hora"], 0, 1)). ":" .(substr($row["hora"], -2, 2));
@@ -31,7 +31,7 @@ $stmt = $bd->ejecutar($sql);
    
 
   }
-    mysql_free_result($stmt);
+    mysqli_free_result($stmt);
  
 }
 

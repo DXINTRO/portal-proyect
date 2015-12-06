@@ -111,7 +111,7 @@ class fun_resize {
     }
     public function UPdateMail($code, $sub) {//2015-12-30'
         set_time_limit(0);
-        list ($seman, $star, $end) = Week();
+        list ($seman, $star, $end) = Week(1);
         try {
            $html = mysql_real_escape_string($code);
             $this->bd = Db::getInstance();
@@ -126,7 +126,7 @@ class fun_resize {
             $this->bd = Db::getInstance();
             $this->sql = "SELECT * FROM queryjumbo.dia where dia.planilla_idplanilla='" .$this->buscarid(). "';";
             $result = $this->bd->ejecutar($this->sql);
-            while($row = mysql_fetch_array($result)){
+            while($row = mysqli_fetch_array($result)){
                 $this->result_array[] = $row;  }
                return $this->result_array ;          
         } catch (Exception $ex) {

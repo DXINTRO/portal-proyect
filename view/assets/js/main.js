@@ -1,4 +1,6 @@
 //////////////////////////////////////GLOBAL//////////////////////////////////////////////////////////////////////////////////////////
+//Hide Hints
+
 var q = 1;
 // this is a global variable
 var temp = null;
@@ -90,15 +92,17 @@ function cargarT(obj) {
     $(id).empty();
     $(id).append('<option selected hidden value="">- Turnos -</option>');
     var myInt = parseInt(n[1]) - 1;//numero del up
-    var indeup = $('select[name=category' + myInt + ']').val();// index del up
+    var indeup = $('select[name=category' + myInt + ']').val();// index del up del dia
     //setTimeout(alert(myInt),500);
     // $('select[name=category01]').empty();
+     console.log("1 indeup: "+indeup);
+     
+     console.log("1data cargaT ddia: "+index+" y se envio t "+temp);
     if (index !== indeup) {
         $.get('../controller/cargarlist.php', 'day=' + index + '&inx=null', function (data) {
             $(id).append(data);
         });
     } else {
-        // alert("data cargaT ddia: "+index+" y se envio t "+temp);
         $.get('../controller/cargarlist.php', 'day=' + index + '&inx=' + temp, function (data) {
             $(id).append(data);
         });
@@ -118,7 +122,7 @@ function cargarNext(obj) {
     $('select[name=category' + myInt + ']').prop('selectedIndex', 0);
     $('select[name=category' + myInt + '-right]').prop('selectedIndex', 0);
 
-    //alert("data d y t: "+indexL+" y "+indexR);
+     console.log("2data d y t: "+indexL+" y "+indexR);
 
     for (var i = 0; i < 9; i++) {//turnos
         for (var x = 0; x < 7; x++) {//dias
@@ -153,9 +157,6 @@ function Tbusqueda(e)
     $('#btnSearh').attr('disabled', false);
     
 }
-
-
-
 
 //////////////////////////////////////////MODALS//////////////////////////////////////////////////////////////////////////////////////////
 function modalContact(){

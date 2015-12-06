@@ -1,26 +1,23 @@
 <?php
 
 class fun_inicio {
-  private $sql;
+
+    private $sql;
     private $bd;
     private $stmt;
     private $rawdata;
 
     function validarusuario($log, $pas) {
-          
+
         require_once '../model/Db.class.php';
-       require_once '/contruct/Conf.class.php';
-       /*Creamos la instancia del objeto. Ya estamos conectados*/
-        $this->bd=Db::getInstance();
-       
-       $this->sql = "call getUsuarioValido('" . $log . "','" . $pas . "',1);";
-        
-         $this->stmt = $this->bd->ejecutar($this->sql);
-         
-      $this->rawdata=$this->bd->obtener_fila($this->stmt,0);
-      
+        require_once '/contruct/Conf.class.php';
+        /* Creamos la instancia del objeto. Ya estamos conectados */
+        $this->bd = Db::getInstance();
+        $this->sql = "call getUsuarioValido('" . $log . "','" . $pas . "',1);";
+        $this->stmt = $this->bd->ejecutar($this->sql);
+        $this->rawdata = $this->bd->obtener_fila($this->stmt, 0);
+
         if ($this->rawdata) {
-           
             session_start();
             $_SESSION['id'] = $this->rawdata[0];   //
             $_SESSION['piochaid'] = $this->rawdata[1];   //
@@ -33,26 +30,24 @@ class fun_inicio {
             $_SESSION['substatus'] = $this->rawdata[8];
             $_SESSION['admin'] = $this->rawdata[9];
             $_SESSION['tipouser'] = $this->rawdata[10];
-              $_SESSION['releasedT'] = $this->rawdata[11];
+            $_SESSION['releasedT'] = $this->rawdata[11];
             $_SESSION['tiempoDesde'] = $this->rawdata[12];
             $_SESSION['tiempoAsta'] = $this->rawdata[13];
             $_SESSION['regaladode'] = $this->rawdata[14];
             $_SESSION['releasedS'] = $this->rawdata[15];
-           $_SESSION['desde'] = $this->rawdata[16];
-           $_SESSION['asta'] = $this->rawdata[17];
-           $_SESSION['fechanaciminto'] = $this->rawdata[18];
-           $_SESSION['carrera_idcarrera'] = $this->rawdata[19];
-           $_SESSION['cellphone'] = $this->rawdata[20];
-           $_SESSION['otrophone'] = $this->rawdata[21];
-           $_SESSION['direccion'] = $this->rawdata[22];
-             header("location:../index.php");
-            
-            
+            $_SESSION['desde'] = $this->rawdata[16];
+            $_SESSION['asta'] = $this->rawdata[17];
+            $_SESSION['fechanaciminto'] = $this->rawdata[18];
+            $_SESSION['carrera_idcarrera'] = $this->rawdata[19];
+            $_SESSION['cellphone'] = $this->rawdata[20];
+            $_SESSION['otrophone'] = $this->rawdata[21];
+            $_SESSION['direccion'] = $this->rawdata[22];
+            header("location:../index.php");
         } else {
             return "<font color='orange'><sub>Has introducido un correo electrónico o una contraseña incorrecta..</sub></font>";
-            
         }
-      
-}}
+    }
+
+}
 
 ?>

@@ -22,14 +22,14 @@ INNER JOIN  suspencion ON users.piochaid = suspencion.users_piochaid;
   
   
   
-  call setTurnos("c60",200,400,0800,1,1,11413868610000);
+  call setTurnos("c58",201,400,0800,1,1,11413868610000);
   call setTurnos("c60",200,401,0800,1,1,11413868610000);
   call setTurnos("c60",200,402,0800,1,1,11413868610000);
-  call setTurnos("c60",200,400,0800,1,1,11413868610000);
-  call setTurnos("c60",200,400,0800,1,1,11413868610000);
-  call setTurnos("c60",200,400,0800,1,1,11413868610000);
-  call setTurnos("c60",200,400,0800,1,1,11413868610000);
-  call setTurnos("c60",200,400,0800,1,1,11413868610000);
+  call setTurnos("c60",200,403,0800,1,1,11413868610000);
+  call setTurnos("c60",200,404,0800,1,1,11413868610000);
+  call setTurnos("c60",200,406,0800,1,1,11413868610000);
+  call setTurnos("c60",200,402,0800,1,1,11413868610000);
+  call setTurnos("c60",200,404,0800,1,1,11413868610000);
   call setTurnos("c60",200,400,0800,1,1,11413868610000);
 /* c60 con el id $$ pudio un 400 alas 0800, en la fila 1 tipo 1 alas 24543date*/
   
@@ -130,7 +130,17 @@ INSERT INTO `queryjumbo`.`turno` (`hora`, `dia_iddias`) VALUES (1030, '402');/*v
 /*ahora cada usuario  y sus turnos de cada select */
   
   call setTurnos("c60",200,406,'900',1,1,11413868610000);
+  SET @var_name =last_insert_id();
+SELECT @var_name;
 /* c60 con el id $$ pudio un 400 alas 0800, en la fila 1 tipo 1 alas 24543date*/
+  
+INSERT INTO `queryjumbo`.`turno` (`hora`, `dia_iddias`) VALUES (1900, 406);
+
+SET @var_name =last_insert_id();
+SELECT @var_name;
+INSERT INTO `queryjumbo`.`empaques` (`users_piochaid`, `tiempoDeEnvio`, `userinformation_id`, `indez`, `tipo`) VALUES ("c60", 11413868610000,200,7,2);
+
+  
   
   
 SET FOREIGN_KEY_CHECKS = 0; 
